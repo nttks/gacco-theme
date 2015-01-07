@@ -1,0 +1,100 @@
+## mako
+<%! from django.core.urlresolvers import reverse %>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='static_content.html'/>
+<%
+  protocol = "https" if is_secure else "http"
+  if course:
+    course_about = reverse('about_course', args=[course.id.to_deprecated_string()])
+    facebook_url = twitter_url = "{prot}://{fqdn}{uri}".format(prot=protocol, fqdn=settings.SITE_NAME, uri=course_about)
+  else:
+    facebook_url = twitter_url = "{prot}://{fqdn}/".format(prot=protocol, fqdn=settings.SITE_NAME)
+%>
+
+
+<div class="wrapper wrapper-footer edxyfooter">
+  <footer>
+    <div class="colophon">
+      <nav class="nav-colophon">
+        <ol>
+            <li class="nav-colophon-01">
+              <a href="${marketing_link('TOS')}"><i class="icon-chevron-sign-right"></i>${_("Terms of Service and Honor Code")}</a>
+            </li>
+            <li class="nav-colophon-02">
+              <a href="${marketing_link('PRIVACY')}"><i class="icon-chevron-sign-right"></i>${_("Privacy Policy")}</a>
+            </li>
+            <li class="nav-colophon-03">
+              <a id="faq" href="${marketing_link('FAQ')}"><i class="icon-chevron-sign-right"></i>${_("FAQ")}</a>
+            </li>
+            <li class="nav-colophon-04">
+              <a href="#help-modal" rel="leanModal" role="button"><i class="icon-chevron-sign-right"></i>${_("Help")}</a>
+            </li>
+        </ol>
+      </nav>
+      <div id="social-plugins">
+        <div id="gacco-twitter" data-url="${twitter_url}" data-text="無料オンライン大学講座「gacco」登録受付中！" data-title="Twitter"></div>
+        <div id="gacco-facebook" data-url="${facebook_url}" data-title="Facebook"></div>
+        <div id="gacco-blog">
+          <a href="${marketing_link('BLOG')}">Blog</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="references">
+      <div class="powered-by">
+        <small>${_("NTT DOCOMO, INC.")}<br>${_("NTT Knowledge Square Inc.")}</small>
+      </div>
+      <div class="copyright">
+        <small>${_("Copyright (c) 2015 NTT Knowledge Square Inc., except where noted, all rights reserved.")}</small>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="${static.url('themes/gacco/js/vendor/sharrre/jquery.sharrre.min.js')}"></script>
+<script>
+$('#gacco-twitter').sharrre({
+  share: {
+    twitter: true
+  },
+  buttons: {
+    twitter: {count: 'horizontal', hashtags: '#gacco'}
+  },
+  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="icon-twitter-sign"></i><span>Tweet</span></div></a>',
+  enableHover: false,
+  enableTracking: true,
+  click: function(api, options) {
+    api.simulateClick();
+    api.openPopup('twitter');
+  }
+});
+$('#gacco-facebook').sharrre({
+  share: {
+    facebook: true
+  },
+  buttons: {
+    facebook: {action: 'like', layout: 'button_count'}
+  },
+  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="icon-facebook-sign"></i><span>Like</span></div></a>',
+  enableHover: false,
+  enableTracking: true,
+  click: function(api, options) {
+    api.simulateClick();
+    api.openPopup('facebook');
+  }
+});
+</script>
+<script type="text/javascript">
+    var _dcmlinker = _dcmlinker || new Array();
+    _dcmlinker.push("gacco.org");
+    _dcmlinker.push("support.gacco.org");
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//docomo-analytics.com/dcm/";
+        _paq.push(['setTrackerUrl', u+'tr/dcmAn/']);
+        _paq.push(['setSiteId', 8]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/dcman.js'; s.parentNode.insertBefore(g,s);
+      })();
+</script>
