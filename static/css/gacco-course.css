@@ -445,6 +445,11 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05));
 }
 
+.container .discussion-body .discussion-column .helpgrid-row .row-title {
+  min-width: 85px;
+}
+
+
 @media screen and (max-width: 950px) {
   .container .discussion-body .forum-nav .new-post-btn {
     padding: 5px 15px;
