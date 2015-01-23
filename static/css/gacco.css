@@ -71,6 +71,15 @@ header.global ol.user > li.primary > a.user-link .avatar {
 }
 .help-tab a:link, .help-tab a:visited {
   font-weight: normal;
+  border: 0 none;
+  border-top-style: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  display: inline;
+}
+.help-tab a:link:hover, .help-tab a:link:focus, .help-tab a:visited:hover, .help-tab a:visited:focus {
+  background: none;
 }
 
 /* ### footer */
