@@ -83,7 +83,7 @@ header.global ol.user > li.primary > a.user-link .avatar {
   min-width: 0;
 }
 
-.view-register .wrapper-footer footer, .view-login .wrapper-footer footer, .view-passwordreset .wrapper-footer footer {
+.view-register .wrapper-footer footer, .view-login .wrapper-footer footer, .view-passwordreset .wrapper-footer footer, .view-resign .wrapper-footer footer {
   width: auto;
 }
 
@@ -357,11 +357,11 @@ header.global ol.user > li.primary > a.user-link .avatar {
   width: 80%;
 }
 
-.login aside, .register aside, .passwordreset aside, #forgot-password-modal #password-reset aside {
+.login aside, .register aside, .passwordreset aside, .resign aside, #forgot-password-modal #password-reset aside {
   width: 35%;
 }
 
-.login .content, .register .content, .passwordreset .content, #forgot-password-modal #password-reset .conten {
+.login .content, .register .content, .passwordreset .content, .resign .content, #forgot-password-modal #password-reset .conten {
   width: 55%;
 }
 
@@ -373,21 +373,21 @@ header.global ol.user > li.primary > a.user-link .avatar {
   #content section.introduction, #content section.login, #content section.register {
     width: 100%;
   }
-  .login aside, .register aside, .passwordreset aside, #forgot-password-modal #password-reset aside {
+  .login aside, .register aside, .passwordreset aside, .resign aside, #forgot-password-modal #password-reset aside {
     width: 100%;
     margin-top: 20%;
   }
-  .login .content, .register .content, .passwordreset .content, #forgot-password-modal #password-reset .conten {
+  .login .content, .register .content, .passwordreset .content, .resign .content, #forgot-password-modal #password-reset .conten {
     width: 100%;
   }
-  .view-register .introduction header .title .title-sub, .view-login .introduction header .title .title-sub, .view-passwordreset .introduction header .title .title-sub {
+  .view-register .introduction header .title .title-sub, .view-login .introduction header .title .title-sub, .view-passwordreset .introduction header .title .title-sub, .view-resign .introduction header .title .title-sub {
     font-size: 15px;
     margin-left: 10px;
   }
   #field-password .tip-input {
     position: relative;
   }
-  .view-register .introduction header .title, .view-login .introduction header .title, .view-passwordreset .introduction header .title {
+  .view-register .introduction header .title, .view-login .introduction header .title, .view-passwordreset .introduction header .title, .view-resign .introduction header .title {
     left: 10px;
     top: 10px;
   }
