@@ -53,7 +53,7 @@
         bar_size = len(grade_summary['section_breakdown'])
         color_min = 50
         color_max = 200
-        color_size = bar_size / 6 if bar_size % 3 == 0 else bar_size / 6 + 1
+        color_size = bar_size / 6 if bar_size % 6 == 0 else bar_size / 6 + 1
         base_color = int((color_max - color_min) / (color_size + 1))
         bar_colors = []
 
@@ -70,7 +70,10 @@
           <div class="y-axis">
             <div><p>${_("Grade graph")}</p></div>
             % for section in grade_summary['section_breakdown']:
-            <div><p>${section['label']}</p></div>
+              <% prominent = section.get('prominent') %>
+              % if prominent is not True or not section['label'].endswith('Avg'):
+              <div><p>${section['label']}</p></div>
+              % endif
             % endfor
             <div><p>${_('Total')}</p></div>
           </div>
@@ -84,23 +87,31 @@
             <% bgc_index = 0 %>
             % for section in grade_summary['section_breakdown']:
             <% 
+              prominent = section.get('prominent')
               bar_width = round(section['percent'] * 100, 1)
               bar_color = bar_colors[bgc_index]
             %>
-            <div class="row">
-              <div class="bar" style="width: ${bar_width}%; background-color: rgb(${bar_color})">
-                <small>${bar_width}%</small>
+              % if prominent is not True or not section['label'].endswith('Avg'):
+              <div class="row">
+                <div class="bar" style="width: ${bar_width}%; background-color: rgb(${bar_color})">
+                  <small>${bar_width}%</small>
+                </div>
               </div>
-            </div>
-            <% bgc_index += 1 %>
+              <% bgc_index += 1 %>
+              % endif
             % endfor
             <% total_score = grade_summary['percent'] * 100 %>
             <div class="row">
               <% bgc_index = 0 %>
-              % for sec, scores in grade_summary['totaled_scores'].items():
-              <% bar_color = bar_colors[bgc_index] %>
-              <div class="total_bar" style="width: ${scores[0].earned}%; background-color: rgb(${bar_color})"></div>
-              <% bgc_index += 1 %>
+              % for section in grade_summary['section_breakdown']:
+              <%
+                prominent = section.get('prominent')
+                bar_color = bar_colors[bgc_index]
+              %>
+                % if prominent is not True or not section['label'].endswith('Avg'):
+                <div class="total_bar" style="width: ${grade_summary['totaled_scores'][section['category']][0].earned}%; background-color: rgb(${bar_color})"></div>
+                <% bgc_index += 1 %>
+                % endif
               % endfor
               <div class="total_score" style="width: ${total_score}%"><small>${total_score}%</small></div>
             </div>
