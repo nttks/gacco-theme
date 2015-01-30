@@ -6,20 +6,55 @@ html, body {
 
 /* ### header */
 header.global {
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
+}
+header.global .nav-courseware ol{
+  margin-top: 0px;
 }
 .home > header .outer-wrappe {
   min-width: 0;
 }
+header.global .nav-global li{
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
 header.global .nav-global, header.global header.global-new .nav-courseware, header.global-new header.global .nav-courseware {
-  margin: 0;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 header.global h1.logo {
-  margin: -10px 39px 0 0;
+  margin: -10px 20px 0 0;
+}
+header.global h1.logo .svg_wrapper{
+	height: 51px;
+	width: auto;
+	display: inline-block;
+
+}
+header.global.slim h1.logo .svg_wrapper{
+	height: 40px;
+	width: auto;
+	margin-top: 0px;
+}
+header.global h1.logo img{
+	height: 51px;
+	padding-top: 0px;
+	margin-top: 10px;
+	width: auto;	
+}
+header.global.slim h1.logo img{
+	height: 40px;
+	width: auto;
+	margin-top: 0px;
 }
 header.global nav {
   min-width: 0;
+  padding-top: 12px;
 }
 header.global .nav-courseware li .cta > i[class^="icon-"] {
   margin-right: 8px;
@@ -36,16 +71,44 @@ header.global ol.user > li.primary > a.user-link .avatar {
   font-size: 1.3em;
   text-indent: 0;
 }
+header.global ol.user {
+	background-color: #fff;
+	background-image: none;
+	border-radius: 2px;
+}
+header.global ol user:hover {
+	background-image: none;
+	background-color: #eee;
+}
+header.global ol.user>li.primary>a{
+	background-color: #fff;
+	background-image: none;
+}
+header.global ol.user>li.primary>a:hover{
+	background-image: none;
+	background-color: #eee;
+}
+header.global ol li.primary>a{
+	background-color: #fff;
+	background-image: none;
+}
+header.global ol li.primary>a:hover{
+	background-image: none;
+	background-color: #eee;
+}
+
 
 @media screen and (max-width: 800px) {
   header.global nav {
     padding: 10px 5px;
   }
   header.global h1.logo {
-    margin: 5px 0;
+    /* margin-top: 5px; */
   }
   header.global h1.logo img {
-    height: 40px;
+	margin-top: 10px;
+	width: 200px;
+    height: 51px;
   }
   header.global .nav-courseware li {
     margin-right: 5px;
@@ -152,7 +215,6 @@ header.global ol.user > li.primary > a.user-link .avatar {
   border-radius: 1px;
   background-color: #eee;
   border: 1px solid #c3c3c3;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 #gacco-blog > i,
 #gacco-blog > a {
@@ -178,16 +240,16 @@ header.global ol.user > li.primary > a.user-link .avatar {
   display:block;
   font-size:17px;
   float: right;
-  padding:4px 10px;
+  padding:5px 10px;
   position:relative;
   text-align:center;
   text-decoration:none;
-  background-color:#dedede;
+  background-color:#bababa;
   border-radius:4px;
 }
 .count:before {
     border: 10px solid transparent;
-    border-right: 10px solid #dedede;
+    border-right: 10px solid #bbb;
     content: "";
     position: absolute;
     right: 100%;
@@ -204,7 +266,6 @@ header.global ol.user > li.primary > a.user-link .avatar {
 #gacco-twitter .share {
   background-color: #eee;
   border: 1px solid #cfcfcf;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 #gacco-facebook .share {
   background-color: #3b55a0;
@@ -261,7 +322,7 @@ header.global ol.user > li.primary > a.user-link .avatar {
     margin-left: 20px;
     margin-right: 10px;
     padding-right: 10px;
-    width: 50%;
+    width: 40%;
   }
   .wrapper-footer footer .colophon .nav-colophon li {
     float: none;
@@ -282,8 +343,9 @@ header.global ol.user > li.primary > a.user-link .avatar {
   }
   #gacco-facebook .share,
   #gacco-twitter .share,
-  #gacco-blog {
+  #gacco-blog{
     padding: 10px 0;
+    width: 100px;
   }
   #gacco-blog {
     margin-left: 10px;
@@ -293,6 +355,9 @@ header.global ol.user > li.primary > a.user-link .avatar {
   #gacco-blog {
     clear: both;
   }
+	.sharrre .count {
+	padding:15px 20px;
+	}
 }
 @media screen and (max-width: 480px) {
   .wrapper-footer footer .colophon .nav-colophon {
@@ -361,6 +426,39 @@ header.global ol.user > li.primary > a.user-link .avatar {
 }
 
 /* ### login/register page */
+.view-login .introduction header,
+.view-register .introduction header{
+	height: 120px;
+	background: transparent url("http://gacco.org/images/common/bar_about.png") 0 0 no-repeat;
+	background-color: #ccc;
+}
+.view-register .introduction header .title .title-super,
+.view-login .introduction header .title .title-super,
+.view-passwordreset .introduction header .title .title-super,
+.view-resign .introduction header .title .title-super{
+	font-size: 26px;
+	line-height: normal;
+	text-transform: none;
+	color: #333;
+	font-weight: bold;
+	margin-top: -21px;
+}
+@media screen and (max-width: 800px) {
+	.view-register .introduction header .title .title-super,
+	.view-login .introduction header .title .title-super,
+	.view-passwordreset .introduction header .title .title-super,
+	.view-resign .introduction header .title .title-super{
+		margin-top: 18px;
+	}
+}
+.view-login .introduction header .title .title-sub,
+.view-register .introduction header .title .title-sub{
+	font-size: 20px;
+	margin-left: 2px;
+	text-transform: lowercase;
+	color: #333;
+}
+
 #content section.introduction, #content section.login, #content section.register {
   max-width: 1180px;
   width: 80%;
@@ -418,14 +516,38 @@ header.global ol.user > li.primary > a.user-link .avatar {
 }
 
 /* ### dashboard page */
+#unenroll_course_number{
+	text-transform: none;
+}
 #dashboard-main {
   padding-top: 30px;
 }
 
+.dashboard .my-courses .course{
+	z-index: 99;
+}
+
+.dashboard .my-courses .course .cover{
+	width: 30%;
+	height: auto;
+}
 .dashboard .my-courses .course .info {
   float: left;
   padding: 0 10px 0 30px;
+  width: 60%;
 }
+@media screen and (max-width: 620px) {
+	.dashboard .my-courses .course .cover{
+		width: 100%;
+		height: auto;
+	}
+	.dashboard .my-courses .course .info {
+		float: left;
+		padding: 5px 0 0 0;
+		width: 100%;
+	}
+}
+
 
 .dashboard .my-courses .course .info > hgroup .date-block {
   position: relative;
@@ -438,6 +560,7 @@ header.global ol.user > li.primary > a.user-link .avatar {
 
 .dashboard .profile-sidebar {
   box-shadow: none;
+  z-index: 99;
 }
 
 nav ol.course-nav-menu {
@@ -450,9 +573,17 @@ nav ol.course-nav-menu {
   display: inline-block;
   font-weight: bold;
   padding: 10px 0;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   text-decoration: none;
+  background-color: #666;
+  background-image: none;
+  border-radius: 3px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  text-shadow: none;
+  text-transform: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -471,9 +602,6 @@ nav ol.course-nav-menu {
   }
   .dashboard .my-courses > header {
     margin: 30px 0;
-  }
-  .dashboard .my-courses .course .info {
-    width: auto;
   }
   header.global ol.nav-global > li.nav-global-01 > [href="/courses"] {
     font-size: 10px;
@@ -502,18 +630,19 @@ nav ol.course-nav-menu {
 
 /* ### course about page */
 .course-info header.course-profile {
-  background: none;
+  background: -webkit-linear-gradient(#426df7 0%, #12fabb 100%);
   border-bottom: 0 none;
   box-shadow: none;
   height: auto;
   margin-top: 0;
   padding-top: 30px;
-  padding-bottom: 0 none;
+  padding-bottom: 30px;
   overflow: visible;
 }
 .course-info header.course-profile .intro-inner-wrapper {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   min-width: 0;
+  max-width: 960px;
 }
 .course-info header.course-profile .intro-inner-wrapper .media {
   min-width: 350px;
@@ -524,11 +653,14 @@ nav ol.course-nav-menu {
 }
 @media screen and (max-width: 800px) {
   .course-info header.course-profile {
-    padding-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .course-info header.course-profile .intro-inner-wrapper {
     border: 0 none;
     box-shadow: none;
+    margin: 0 15px 0 15px;
+    padding-bottom: 15px;
   }
   .course-info header.course-profile .intro-inner-wrapper .table .intro .main-cta a span,
   .course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
@@ -559,7 +691,7 @@ nav ol.course-nav-menu {
     display: block;
     margin: 0 auto;
     padding: 0 10px;
-    width: 250px;
+    width: 100%;
     min-width: 250px;
   }
   .course-info header.course-profile .intro-inner-wrapper .intro {
@@ -569,7 +701,7 @@ nav ol.course-nav-menu {
   .course-info header.course-profile .intro-inner-wrapper .table .intro .main-cta a span,
   .course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
   .course-info header.course-profile .intro-inner-wrapper .intro > hgroup h1 {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
 
@@ -591,12 +723,20 @@ nav ol.course-nav-menu {
 /* gray button */
 .dashboard .my-courses .course .info .enter-course.archived,
 .forum-new-post-form .cancel,
+.xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window  {
+  background-color: #666;
+  background-image: none;
+  border-radius: 3px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-shadow: none;
+  text-transform: none;
+}
 div.course-wrapper > a[href="#course-accordion-modal"],
 header.global div.menu-button,
-.find-course-button > a,
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.add-to-cart,
-header.global .nav-courseware li .cta-login,
 div.history-controls input[type="submit"],
 input[type="reset"],
 input[type="button"],
@@ -608,22 +748,63 @@ button,
 .button,
 .gray-button,
 .light-button,
-a.light-button,
-.xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window  {
-  background-color: #d2d7d3;
-  background-image: none;
-  border-radius: 1px;
+a.light-button{
+  background-color: #666;
+  /* background-image: none; */
+  border-radius: 3px;
   border-style: none;
-  box-shadow: 1px 1px 1px #666;
-  color: #333;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+/*   padding: 14px 28px 15px 28px; */
+  text-shadow: none;
+  text-transform: none;
 }
+header.global .nav-courseware li .cta-login{
+  background-color: rgb(102, 102, 102);
+  border-radius: 3px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-shadow: none;
+  text-transform: none;
+}
+header.global .nav-courseware li .cta-register{
+  border-radius: 3px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-shadow: none;
+  text-transform: none;
+  background-color: rgb(56, 142, 88);
+}
+
+
+@media screen and (max-width: 800px) {
+	header.global .nav-courseware li .cta-login{
+		padding: 0;
+	}
+}
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.disabled{
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #222;
+  border-radius: 3px;
+  color: #222;
+  box-shadow: 0px 0px 0px black;
+  padding: 14px 28px 15px 28px;
+  margin-top: 0px;
+  text-shadow: none;
+  text-transform: none;
+}
+
 
 .dashboard .my-courses .course .info .enter-course.archived:hover:not(:disabled),
 .forum-new-post-form .cancel:hover:not(:disabled),
 div.course-wrapper > a[href="#course-accordion-modal"]:hover:not(:disabled),
 header.global div.menu-button:hover:not(:disabled),
 .find-course-button > a:hover:not(:disabled),
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.add-to-cart:hover:not(:disabled),
 header.global .nav-courseware li .cta-login:hover:not(:disabled),
 div.history-controls input[type="submit"]:hover:not(:disabled),
@@ -639,13 +820,34 @@ button:hover:not(:disabled),
 .light-button:hover:not(:disabled),
 a.light-button:hover:not(:disabled),
 .xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
-  background-color: #abb7b7;
-  background-image: none;
-  color: #333;
+  background-color: #222;
+  /* background-image: none; */
+  color: #fff;
+  text-decoration: none;
+}
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register:hover:not(:disabled){
+	background-color: transparent;
+    border: solid 1px #222;
+	color: #222;
+	cursor: default;
 }
 
 /* blue button */
 .dashboard .my-courses .message-status .actions .action .btn,
+.dashboard .my-courses .course .info .enter-course,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
+.blue-button{
+  background-color: #008CBA;
+  background-image: none;
+  border:transparent solid 1px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-shadow: none;
+  text-transform: none;
+}
 .container .discussion-module .new-post-btn,
 .container .discussion-user-threads .new-post-btn,
 .container .discussion-body .forum-nav .new-post-btn,
@@ -653,22 +855,37 @@ a.light-button:hover:not(:disabled),
 .container .discussion-body .discussion-submit-post,
 .container .discussion-module .discussion-submit-post,
 .container .discussion-user-threads .discussion-submit-pos,
-.post-extended-content .forum-thread-list-btn,
-.home-header .forum-thread-list-btn,
-.discussion-post .forum-thread-list-btn,
-.dashboard .my-courses .course .info .enter-course,
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong,
-.blue-button,
 .xmodule_display.xmodule_CapaModule div.problem div.action .save,
 .xmodule_display.xmodule_PeerGradingModule section.open-ended-child div.action input.save,
 .xmodule_display.xmodule_ConditionalModule div.problem div.action .save,
 .xmodule_display.xmodule_CombinedOpenEndedModule section.open-ended-child div.action input.save {
-  background-color: #008cba;
+  background-color: #008CBA;
   background-image: none;
-  border-radius: 1px;
+  border:transparent solid 1px;
   border-style: none;
-  box-shadow: 1px 1px 1px #2c3e50;
+  box-shadow: 0px 0px 0px black;
   color: #fff;
+  text-shadow: none;
+  text-transform: none;
+}
+.container .discussion-body .forum-nav .new-post-btn{
+	padding: 0;
+}
+.container .forum-new-post-form .submit,
+.container .forum-new-post-form .cancel,
+.container .discussion-module .new-post-btn,
+.xmodule_display.xmodule_CapaModule div.problem div.action .save,
+.xmodule_display.xmodule_PeerGradingModule section.open-ended-child div.action input.save,
+.xmodule_display.xmodule_ConditionalModule div.problem div.action .save,
+.xmodule_display.xmodule_CombinedOpenEndedModule section.open-ended-child div.action input.save {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+@media screen and (max-width: 400px) {
+	.container .discussion-module .new-post-btn{
+		width: 20px;
+		font-size: 0px;	
+	}
 }
 
 .dashboard .my-courses .message-status .actions .action .btn:hover:not(:disabled),
@@ -679,9 +896,6 @@ a.light-button:hover:not(:disabled),
 .container .discussion-body .discussion-submit-post:hover:not(:disabled),
 .container .discussion-module .discussion-submit-post:hover:not(:disabled),
 .container .discussion-user-threads .discussion-submit-pos:hover:not(:disabled),
-.post-extended-content .forum-thread-list-btn:hover:not(:disabled),
-.home-header .forum-thread-list-btn:hover:not(:disabled),
-.discussion-post .forum-thread-list-btn:hover:not(:disabled),
 .dashboard .my-courses .course .info .enter-course:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta strong:hover:not(:disabled),
 .blue-button:hover:not(:disabled),
@@ -695,17 +909,37 @@ a.light-button:hover:not(:disabled),
 }
 
 /* green buton */
-header.global .nav-courseware li .cta-register,
 input[type="submit"],
 form input[type="submit"],
 .xmodule_display.xmodule_CapaModule div.problem div.action .check {
   background-color: #43ac6a;
   background-image: none;
-  border-radius: 1px;
-  border-style: none;
-  box-shadow: 1px 1px 1px #666;
+  border-radius: 3px;
+  border:transparent solid 1px;
+  box-shadow: 0px 0px 0px #666;
   color: #fff;
-  text-shadow: 0 1px 0 #16a085;
+  text-shadow: none;
+  text-transform: none;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+@media screen and (max-width: 800px) {
+	header.global .nav-courseware li .cta-register{
+		padding: 0;
+		width: 75px;
+	}
+}
+
+#change_name_form .submit input[type="submit"],
+#change_email_body .submit input[type="submit"],
+#email_settings_form .submit input[type="submit"],
+#feedback_form .submit input[type="submit"],
+#unenroll_form .submit input[type="submit"]{
+	padding: 14px 28px 15px 28px;
 }
 
 header.global .nav-courseware li .cta-register:hover:not(:disabled),
@@ -717,6 +951,46 @@ form input[type="submit"]:hover:not(:disabled),
   color: #fff;
 }
 
+.dashboard .my-courses .course .info .enter-course:active:not(:disabled),
+.dashboard .my-courses .course .info .enter-course:focus:not(:disabled){
+	border: none;
+	box-shadow: none;
+}
+
+/* course_about header table */
+.course-info header.course-profile .intro-inner-wrapper>div.table{
+	max-width: 960px;
+	box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+}
+/* course_about register button */
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register,
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart{
+  background-color: #43ac6a;
+  background-image: none;
+  border-radius: 3px;
+  border:transparent solid 1px;
+  box-shadow: 0px 0px 0px #666;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-transform: none;
+  width: 100%;
+  text-shadow: none;
+  text-transform: none;
+}
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:hover:not(:disabled),
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled),
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled){
+  background-color: #1e824c;
+  background-image: none;
+  color: #fff;
+  text-transform: none;
+}
+
+.course-info .container nav{
+	font-size: 20px;
+}
+
 /* font */
 html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
   font-family: "Meiryo","Hiragino Kaku Gothic ProN","MS P Gothic",Verdana,Arial,Helvetica,sans-serif !important;
@@ -726,18 +1000,18 @@ html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
   .dashboard .profile-sidebar header.profile h1.user-name,
   .dashboard .my-courses .course .info > hgroup h3 a,
   h1 {
-    font-size: 14px;
+    font-size: 22px;
   }
   h2 {
-    font-size: 12px;
+    font-size: 20px;
   }
   h3 {
-    font-size: 11px;
+    font-size: 16px;
   }
   h3 {
-    font-size: 11px;
+    font-size: 14px;
   }
   h6, h5, h4 {
-    font-size: 11px;
+    font-size: 12px;
   }
 }

@@ -39,11 +39,13 @@ site_status_msg = get_site_status_msg(course_id)
   <header class="global ${"slim" if course else ""}" aria-label="${_('Global Navigation')}">
     <nav>
     <h1 class="logo">
+      <div class="svg_wrapper">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
             <img src="${static.url('themes/gacco/images/gacco_logo.svg')}" alt="${platform_name()}"/>
         </%block>
       </a>
+      </div>
     </h1>
 
     % if course:
@@ -66,6 +68,11 @@ site_status_msg = get_site_status_msg(course_id)
         <a href="#" class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span> &#9662;</a>
         <ul class="dropdown-menu" aria-label="More Options" role="menu">
           <%block name="navigation_dropdown_menu_links" >
+            % if course:
+              <li>
+                <a href="${reverse('dashboard')}">${_("Dashboard")}</a>
+              </li>
+            % endif
             % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
               <li><a href="${marketing_link('FAQ')}">${_("FAQ")}</a></li>
             % endif
@@ -112,21 +119,21 @@ site_status_msg = get_site_status_msg(course_id)
       </%block>
 
     <ol class="right nav-courseware">
-    <li class="nav-courseware-01">
-      % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
-          % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-            <a class="cta cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}"><i class="icon-user"></i>${_("Register Now")}</a>
-          % else:
-            <a class="cta cta-register" href="/register"><i class="icon-user"></i>${_("Register Now")}</a>
-          % endif
-      % endif
-    </li>
     <li class="nav-courseware-02">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
           <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}"><i class="icon-home"></i>${_("Log in")}</a>
           % else:
           <a class="cta cta-login" href="/login${login_query()}"><i class="icon-home"></i>${_("Log in")}</a>
+          % endif
+      % endif
+    </li>
+    <li class="nav-courseware-01">
+      % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
+          % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+            <a class="cta cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}"><i class="icon-user"></i>${_("Register Now")}</a>
+          % else:
+            <a class="cta cta-register" href="/register"><i class="icon-user"></i>${_("Register Now")}</a>
           % endif
       % endif
     </li>
