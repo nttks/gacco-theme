@@ -3,7 +3,10 @@
 /* ### course header or body */
 header.global.slim h2 {
   width: auto;
-  white-space: normal;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 59%;
 }
 
 body {
@@ -17,16 +20,26 @@ body {
   }
   header.global.slim h1.logo img {
     height: 40px;
+    padding-top: 5px;
   }
 }
 
 /* ### course info page */
+div.info-wrapper section.handouts ul{
+	background-color: transparent;
+	padding: 3px 16px 3px 16px;
+}
+div.info-wrapper section.handouts ul li a:hover{
+	text-decoration: underline;
+	color: #1d9dd9;
+}
+
 @media screen and (max-width: 800px) {
   div.info-wrapper section.handouts {
     display: table-row;
   }
   div.info-wrapper section.handouts h1 {
-    border-top: 1px solid;
+    border-top: 1px solid #999;
   }
 }
 
@@ -42,6 +55,9 @@ body {
 .open_close_title {
   display: none;
 }
+nav.course-material .inner-wrapper{
+	background-color: #ccc;
+}
 div.course-wrapper > a[href="#course-accordion-modal"] {
   display: none;
   border-bottom-left-radius: none;
@@ -51,7 +67,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] {
   font-size: 18px;
   font-weight: bold;
   padding: 10px 15px;
-  text-shadow: 0 1px 0 #f9f8f8;
+  /* text-shadow: 0 1px 0 #f9f8f8; */
   text-align: left;
   text-decoration: none;
   overflow: hidden;
@@ -61,6 +77,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] {
 
 div.course-wrapper > a[href="#course-accordion-modal"] span {
   font-weight: bold;
+  color: #fff;
 }
 
 div.course-wrapper > a[href="#course-accordion-modal"] .toc {
@@ -89,6 +106,10 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
   font-size: 20px;
   float: left;
   padding-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 85%;
 }
 #modal-accordion .modal-close.icon-remove {
   color: #fff;
@@ -162,6 +183,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
    box-shadow: none;
    padding-left: 19px;
    color: #1d9dd9;
+   line-height: normal;
 }
 #modal-accordion .ui-state-active {
   border-bottom: none;
@@ -314,8 +336,14 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
     display: none;
   }
 
-  .sidebar, .course-index, div#wiki_panel, div.info-wrapper section.handouts, div.book-wrapper section.book-sidebar, .profile-wrapper .user-info {
+  .sidebar, .course-index, div#wiki_panel, div.info-wrapper section.handouts,
+  div.book-wrapper section.book-sidebar,
+  .profile-wrapper .user-info {
     width: 100%;
+    padding-bottom: 30px;
+  }
+  .div.info-wrapper section.handouts{
+	  padding-bottom: 20px;
   }
 }
 
@@ -325,9 +353,14 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.forum-nav-thread-title.title {
+	font-weight: bold;
+	font-size: 16px;
+}
 .forum-nav-thread-title.body {
   color: #666;
-  padding-left: 5px
+  padding: 4px 0 4px 5px;
+  font-size: 14px;
 }
 body.discussion .post-extended-content .forum-thread-list-btn,
 .home-header .forum-thread-list-btn,
@@ -335,7 +368,6 @@ body.discussion .post-extended-content .forum-thread-list-btn,
   display: none;
   font-weight: bold;
   margin: 10px 0;
-  padding: 5px;
   text-align: center;
   text-decoration: none;
   width: 200px;
@@ -345,6 +377,30 @@ body.discussion .post-extended-content .forum-thread-list-btn {
 }
 body.discussion .forum-guideline {
   display: block;
+}
+.forum-thread-list-btn{
+	background-color: #666;
+	background-image: none;
+	border: transparent solid 1px;
+	border-style: none;
+	box-shadow: 0px 0px 0px black;
+	color: #fff;
+	padding: 14px 28px 15px 28px;
+	text-shadow: none;
+	text-transform: none;
+	border-radius: 3px;
+}
+.forum-thread-list-btn:hover{
+	background-color: #999;
+	background-image: none;
+	color: #fff;
+}
+.forum-new-post-form .post-topic a.topic-title{
+	line-height: normal;
+}
+.discussion.container .actions-dropdown .actions-dropdown-list{
+	margin-left: 50px;
+	width: 80px;
 }
 
 /* new-post-btn */
@@ -508,6 +564,7 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
   body.discussion .home-header .forum-thread-list-btn,
   body.discussion .discussion-post .forum-thread-list-btn {
     display: block;
+    color: #fff;
   }
   .forum-new-post-form .post-field .field-label .field-label-text,
   .forum-new-post-form .post-field .field-label,
@@ -790,6 +847,7 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
   white-space: nowrap;
   width: 100%;
   z-index: 1002;
+  height: 13px;
 }
 header.global ol.course-nav-menu {
   display: none;
@@ -803,20 +861,19 @@ header.global div.menu-button  {
   font-weight: bold;
   padding: 12px 18px;
   text-decoration: none;
-  text-shadow: 0 1px 0 #f9f8f8;
   cursor: pointer;
 }
 header.global div.menu-button.active  {
-  box-shadow: 1px 1px 5px 3px #808080 inset;
-  background-color: #aaa;
-  border: 1px solid #777;
+  /* box-shadow: 1px 1px 5px 3px #808080 inset; */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+  /* border: 1px solid #777; */
 }
 header.global div.menu-button:hover  {
   background-color: #cfcfcf;
 }
 nav.course-material ol.course-tabs li .tab-icon {
     font-size: 17px;
-    padding-right: 5px;
+    padding-right: 1px;
 }
 
 @media screen and (max-width: 800px) {
@@ -936,7 +993,8 @@ nav.course-material ol.course-tabs li .tab-icon {
 
 nav.course-material {
   display: block;
-  background-color: #59abe3;*/ /* sky blue */
+  background-color: #ccc;
+  /* background-color: #59abe3; */ /* sky blue */
   /*background-color: #6c7a89; /* gray */
   /*background-color: #34495e;*/ /* dark blue */
   /*background-color: #db0a5b;*/ /* pink */
@@ -958,10 +1016,20 @@ nav.course-material ol.course-tabs {
   padding: 15px 0 10px;
 }
 nav.course-material ol.course-tabs li a {
-  color: white;
+    color: #222;
+	border-radius: 0;
+	color: #222;
 }
 nav.course-material ol.course-tabs li a.active {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5));
+/* 	background-color: #43AC6A; */
+	transition: background-color 300ms ease-out;
+	color: #fff;
+	transition-delay: 300ms;
+}
+nav.course-material ol.course-tabs li a.active:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+/*   background-color: #368a55; */
 }
 header.global.slim {
   box-shadow: none;
@@ -971,6 +1039,9 @@ header.global.slim {
 @media screen and (max-width: 800px) {
   nav.course-material {
     margin: 0 auto 15px;
+  }
+  nav.course-material ol.course-tabs li a{
+	  height: 60px;
   }
   header.global.slim {
     padding: 0;
@@ -983,11 +1054,24 @@ header.global.slim {
   }
 }
 
+
+/* ### course section/sub-section list */
+.course-index div#accordion h3.ui-accordion-header a{
+	line-height: normal;
+}
+
 /* ### course xmodule */
 /* video player */
 .xmodule_display.xmodule_VideoModule div.video article.video-wrapper section.video-player {
   min-height: 0;
 }
+.xmodule_display.xmodule_VideoModule div.video article.video-wrapper section.video-controls ul.vcr{
+	width: 100%;
+	border-bottom: 1px solid rgb(0,0,0);
+	box-shadow: 0px 1px 0px #555;
+}
+
+
 @media screen and (max-width: 600px) {
   .xmodule_display.xmodule_VideoModule div.video article.video-wrapper {
     width: 100%;
@@ -1043,7 +1127,7 @@ header.global.slim {
   #course-content span,
   #course-content label,
   #course-content p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .forum-content h3,
   .course-content h3,
@@ -1065,4 +1149,9 @@ header.global.slim {
   #course-content h1 {
     font-size: 14px;
   }
+}
+
+/* global */
+p{
+	word-wrap:break-word !important;
 }
