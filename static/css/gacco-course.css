@@ -1,12 +1,22 @@
 @charset "UTF-8";
 
 /* ### course header or body */
+header.global.slim h1.logo:before {
+	content: "";
+	display: block;
+	height: 35px;
+	position: absolute;
+	right: 3px;
+	top: 8px;
+	width: 1px;
+}
 header.global.slim h2 {
   width: auto;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: 59%;
+	margin-top: 15px;
 }
 
 body {
@@ -87,6 +97,15 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc {
 }
 div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
   margin: 0 3px;
+}
+
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.prev a:focus,
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.prev a:hover,
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.prev a:active,
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:focus,
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:hover,
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:active{
+	opacity: inherit;
 }
 
 #modal-accordion {
@@ -394,6 +413,9 @@ body.discussion .forum-guideline {
 	background-color: #999;
 	background-image: none;
 	color: #fff;
+}
+.forum-new-post-form{
+	min-width: 0px;
 }
 .forum-new-post-form .post-topic a.topic-title{
 	line-height: normal;
@@ -1030,10 +1052,6 @@ nav.course-material ol.course-tabs li a.active {
 nav.course-material ol.course-tabs li a.active:hover {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
 /*   background-color: #368a55; */
-}
-header.global.slim {
-  box-shadow: none;
-  border: none;
 }
 
 @media screen and (max-width: 800px) {

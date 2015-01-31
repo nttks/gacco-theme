@@ -39,13 +39,11 @@ site_status_msg = get_site_status_msg(course_id)
   <header class="global ${"slim" if course else ""}" aria-label="${_('Global Navigation')}">
     <nav>
     <h1 class="logo">
-      <div class="svg_wrapper">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
-            <img src="${static.url('themes/gacco/images/gacco_logo.svg')}" alt="${platform_name()}"/>
+            <img src="${static.url('themes/gacco/images/gacco_logo.png')}" alt="${platform_name()}"/>
         </%block>
       </a>
-      </div>
     </h1>
 
     % if course:
