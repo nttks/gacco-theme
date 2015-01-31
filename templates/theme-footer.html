@@ -18,13 +18,13 @@
       <nav class="nav-colophon">
         <ol>
             <li class="nav-colophon-01">
-              <a href="${marketing_link('TOS')}"><i class="icon-chevron-sign-right"></i>${_("Terms of Service and Honor Code")}</a>
+              <a href="${marketing_link('TOS')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("Terms of Service and Honor Code")}</a>
             </li>
             <li class="nav-colophon-02">
-              <a href="${marketing_link('PRIVACY')}"><i class="icon-chevron-sign-right"></i>${_("Privacy Policy")}</a>
+              <a href="${marketing_link('PRIVACY')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("Privacy Policy")}</a>
             </li>
             <li class="nav-colophon-03">
-              <a id="faq" href="${marketing_link('FAQ')}"><i class="icon-chevron-sign-right"></i>${_("FAQ")}</a>
+              <a id="faq" href="${marketing_link('FAQ')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("FAQ")}</a>
             </li>
             <li class="nav-colophon-04 help-tab">
               <a href="#help-modal" rel="leanModal" role="button"><i class="icon-chevron-sign-right"></i>${_("Help")}</a>
@@ -35,7 +35,7 @@
         <div id="gacco-twitter" data-url="${twitter_url}" data-text="無料オンライン大学講座「gacco」登録受付中！" data-title="Twitter"></div>
         <div id="gacco-facebook" data-url="${facebook_url}" data-title="Facebook"></div>
         <div id="gacco-blog">
-          <a href="${marketing_link('BLOG')}">Blog</a>
+          <a href="${marketing_link('BLOG')}" rel="noreferrer">Blog</a>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@ $('#gacco-twitter').sharrre({
   buttons: {
     twitter: {count: 'horizontal', hashtags: '#gacco'}
   },
-  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="icon-twitter-sign"></i><span>Tweet</span></div></a>',
+  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="icon-twitter-sign"></i><span>Tweet</span></div></a>',
   enableHover: false,
   enableTracking: true,
   click: function(api, options) {
@@ -75,7 +75,7 @@ $('#gacco-facebook').sharrre({
   buttons: {
     facebook: {action: 'like', layout: 'button_count'}
   },
-  template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="icon-facebook-sign"></i><span>Like</span></div></a>',
+  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="icon-facebook-sign"></i><span>Like</span></div></a>',
   enableHover: false,
   enableTracking: true,
   click: function(api, options) {
