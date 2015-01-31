@@ -994,6 +994,7 @@ form input[type="submit"]:hover:not(:disabled),
 /* font */
 html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
   font-family: "Meiryo","Hiragino Kaku Gothic ProN","MS P Gothic",Verdana,Arial,Helvetica,sans-serif !important;
+  text-transform: none;
 }
 
 @media screen and (max-width: 800px) {
