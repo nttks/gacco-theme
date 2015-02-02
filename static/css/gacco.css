@@ -28,32 +28,31 @@ header.global .nav-global, header.global header.global-new .nav-courseware, head
   margin-left: 0px;
 }
 header.global h1.logo {
-  margin: -10px 20px 0 0;
-}
-header.global h1.logo .svg_wrapper{
-	height: 51px;
-	width: auto;
-	display: inline-block;
-
-}
-header.global.slim h1.logo .svg_wrapper{
-	height: 40px;
-	width: auto;
-	margin-top: 0px;
+  margin: 0 0 0 5px;
 }
 header.global h1.logo img{
-	height: 51px;
+	height: 55px;
 	padding-top: 0px;
-	margin-top: 10px;
-	width: auto;	
+	margin-top: 0px;
+	width: auto;
 }
 header.global.slim h1.logo img{
-	height: 40px;
+	height: 55px;
 	width: auto;
 	margin-top: 0px;
+}
+header.global.slim{
+	padding: 5px 0 5px 0;
+	box-shadow: none;
+	border: none;
+	height: auto;
+}
+header.global.slim nav{
+	padding-top: 5px;
 }
 header.global nav {
   min-width: 0;
+  height: auto;
   padding-top: 12px;
 }
 header.global .nav-courseware li .cta > i[class^="icon-"] {
@@ -70,6 +69,7 @@ header.global ol.user > li.primary > a.user-link .avatar {
   color: #3c3c3c;
   font-size: 1.3em;
   text-indent: 0;
+  margin-top: 0px;
 }
 header.global ol.user {
 	background-color: #fff;
@@ -106,9 +106,9 @@ header.global ol li.primary>a:hover{
     /* margin-top: 5px; */
   }
   header.global h1.logo img {
-	margin-top: 10px;
-	width: 200px;
-    height: 51px;
+	margin-top: 5px;
+	width: auto;
+	height: 50px;
   }
   header.global .nav-courseware li {
     margin-right: 5px;
@@ -295,6 +295,13 @@ header.global ol li.primary>a:hover{
   max-width:50px;
   margin-left:10px;
 }
+.wrapper-footer footer a:hover,
+.wrapper-footer footer a:focus,
+.wrapper-footer footer a:active{
+	border-bottom: none;
+	color: inherit;
+}
+
 
 @media screen and (max-width: 800px) {
   .wrapper-footer {
@@ -429,7 +436,7 @@ header.global ol li.primary>a:hover{
 .view-login .introduction header,
 .view-register .introduction header{
 	height: 120px;
-	background: transparent url("http://gacco.org/images/common/bar_about.png") 0 0 no-repeat;
+	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
 	background-color: #ccc;
 }
 .view-register .introduction header .title .title-super,
@@ -531,11 +538,22 @@ header.global ol li.primary>a:hover{
 	width: 30%;
 	height: auto;
 }
+.dashboard .my-courses .course .cover img{
+	height: auto;
+	min-height: 0px;
+}
 .dashboard .my-courses .course .info {
   float: left;
   padding: 0 10px 0 30px;
   width: 60%;
 }
+.dashboard .dashboard-banner{
+	word-wrap: break-word;
+}
+.dashboard .dashboard-banner p{
+	word-wrap: break-word;
+}
+
 @media screen and (max-width: 620px) {
 	.dashboard .my-courses .course .cover{
 		width: 100%;
@@ -630,7 +648,7 @@ nav ol.course-nav-menu {
 
 /* ### course about page */
 .course-info header.course-profile {
-  background: -webkit-linear-gradient(#426df7 0%, #12fabb 100%);
+  background: url(http://gacco.org/images/top/bg01.png) repeat;
   border-bottom: 0 none;
   box-shadow: none;
   height: auto;
@@ -777,7 +795,7 @@ header.global .nav-courseware li .cta-register{
   padding: 14px 28px 15px 28px;
   text-shadow: none;
   text-transform: none;
-  background-color: rgb(56, 142, 88);
+  background-color: #43ac6a;
 }
 
 
@@ -821,7 +839,7 @@ button:hover:not(:disabled),
 a.light-button:hover:not(:disabled),
 .xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
   background-color: #222;
-  /* background-image: none; */
+  background-image: none;
   color: #fff;
   text-decoration: none;
 }
@@ -903,7 +921,7 @@ a.light-button:hover:not(:disabled),
 .xmodule_display.xmodule_PeerGradingModule section.open-ended-child div.action input.save:hover:not(:disabled),
 .xmodule_display.xmodule_ConditionalModule div.problem div.action .save:hover:not(:disabled),
 .xmodule_display.xmodule_CombinedOpenEndedModule section.open-ended-child div.action input.save:hover:not(:disabled) {
-  background-color: #007095;
+  background-color: #006f94;
   background-image: none;
   color: #fff;
 }
@@ -927,6 +945,29 @@ form input[type="submit"],
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+.view-register .form-actions button[type="submit"]{
+	background-color: #43ac6a;
+	background-image: none;
+	border-radius: 3px;
+	border:transparent solid 1px;
+	box-shadow: 0px 0px 0px transparent;
+}
+.view-register .form-actions button[type="submit"]:hover{
+	background-color: #368a55;
+}
+.view-login .form-actions button[type="submit"],
+.view-passwordreset .form-actions button[type="submit"]{
+	background-color: #666666;
+	background-image: none;
+	border-radius: 3px;
+	border:transparent solid 1px;	
+	box-shadow: 0px 0px 0px transparent;
+}
+.view-login .form-actions button[type="submit"]:hover,
+.view-passwordreset .form-actions button[type="submit"]:hover{
+	background-color: #525252;
+}
+
 @media screen and (max-width: 800px) {
 	header.global .nav-courseware li .cta-register{
 		padding: 0;
@@ -946,7 +987,7 @@ header.global .nav-courseware li .cta-register:hover:not(:disabled),
 input[type="submit"]:hover:not(:disabled),
 form input[type="submit"]:hover:not(:disabled),
 .xmodule_display.xmodule_CapaModule div.problem div.action .check:hover:not(:disabled) {
-  background-color: #1e824c;
+  background-color: #368a55;
   background-image: none;
   color: #fff;
 }
@@ -981,7 +1022,7 @@ form input[type="submit"]:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled),
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled){
-  background-color: #1e824c;
+  background-color: #368a55;
   background-image: none;
   color: #fff;
   text-transform: none;
@@ -995,6 +1036,89 @@ form input[type="submit"]:hover:not(:disabled),
 html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
   font-family: "Meiryo","Hiragino Kaku Gothic ProN","MS P Gothic",Verdana,Arial,Helvetica,sans-serif !important;
   text-transform: none;
+}
+
+.view-register .login aside .cta h3,
+.login aside .cta .view-register h3,
+.view-register .register aside .cta h3,
+.register aside .cta .view-register h3,
+.view-register .passwordreset aside .cta h3,
+.passwordreset aside .cta .view-register h3,
+.view-register .resign aside .cta h3,
+.resign aside .cta .view-register h3,
+.view-register #forgot-password-modal #password-reset aside .cta h3,
+.forgot-password-modal #password-reset aside .cta .view-register h3,
+.view-register .login .status .message-title,
+.login .status .view-register .message-title,
+.view-register .register .status .message-title,
+.register .status .view-register .message-title,
+.view-register .passwordreset .status .message-title,
+.passwordreset .status .view-register .message-title,
+.view-register .resign .status .message-title,
+.resign .status .view-register .message-title,
+.view-register #forgot-password-modal #password-reset .status .message-title,
+.forgot-password-modal #password-reset .status .view-register .message-title,
+.view-login .login aside .cta h3,
+.login aside .cta .view-login h3,
+.view-login .register aside .cta h3,
+.register aside .cta .view-login h3,
+.view-login .passwordreset aside .cta h3,
+.passwordreset aside .cta .view-login h3,
+.view-login .resign aside .cta h3,
+.resign aside .cta .view-login h3,
+.view-login #forgot-password-modal #password-reset aside .cta h3,
+.forgot-password-modal #password-reset aside .cta .view-login h3,
+.view-login .login .status .message-title,
+.login .status .view-login .message-title,
+.view-login .register .status .message-title,
+.register .status .view-login .message-title,
+.view-login .passwordreset .status .message-title,
+.passwordreset .status .view-login .message-title,
+.view-login .resign .status .message-title,
+.resign .status .view-login .message-title,
+.view-login #forgot-password-modal #password-reset .status .message-title,
+.forgot-password-modal #password-reset .status .view-login .message-title,
+.view-passwordreset .login aside .cta h3,
+.login aside .cta .view-passwordreset h3,
+.view-passwordreset .register aside .cta h3,
+.register aside .cta .view-passwordreset h3,
+.view-passwordreset .passwordreset aside .cta h3,
+.passwordreset aside .cta .view-passwordreset h3,
+.view-passwordreset .resign aside .cta h3,
+.resign aside .cta .view-passwordreset h3,
+.view-passwordreset #forgot-password-modal #password-reset aside .cta h3,
+.forgot-password-modal #password-reset aside .cta .view-passwordreset h3,
+.view-passwordreset .login .status .message-title,
+.login .status .view-passwordreset .message-title,
+.view-passwordreset .register .status .message-title,
+.register .status .view-passwordreset .message-title,
+.view-passwordreset .passwordreset .status .message-title,
+.passwordreset .status .view-passwordreset .message-title,
+.view-passwordreset .resign .status .message-title,
+.resign .status .view-passwordreset .message-title,
+.view-passwordreset #forgot-password-modal #password-reset .status .message-title,
+.forgot-password-modal #password-reset .status .view-passwordreset .message-title,
+.view-resign .login aside .cta h3,
+.login aside .cta .view-resign h3,
+.view-resign .register aside .cta h3,
+.register aside .cta .view-resign h3,
+.view-resign .passwordreset aside .cta h3,
+.passwordreset aside .cta .view-resign h3,
+.view-resign .resign aside .cta h3,
+.resign aside .cta .view-resign h3,
+.view-resign #forgot-password-modal #password-reset aside .cta h3,
+.forgot-password-modal #password-reset aside .cta .view-resign h3,
+.view-resign .login .status .message-title,
+.login .status .view-resign .message-title,
+.view-resign .register .status .message-title,
+.register .status .view-resign .message-title,
+.view-resign .passwordreset .status .message-title,
+.passwordreset .status .view-resign .message-title,
+.view-resign .resign .status .message-title,
+.resign .status .view-resign .message-title,
+.view-resign #forgot-password-modal #password-reset .status .message-title,
+.forgot-password-modal #password-reset .status .view-resign .message-title {
+	text-transform: none;
 }
 
 @media screen and (max-width: 800px) {
