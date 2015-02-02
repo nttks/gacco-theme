@@ -839,7 +839,7 @@ button:hover:not(:disabled),
 a.light-button:hover:not(:disabled),
 .xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
   background-color: #222;
-  /* background-image: none; */
+  background-image: none;
   color: #fff;
   text-decoration: none;
 }
