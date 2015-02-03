@@ -647,6 +647,10 @@ nav ol.course-nav-menu {
 }
 
 /* ### course about page */
+.course-info .details .inner-wrapper .faq .responses{
+	float: inherit;
+}
+
 .course-info header.course-profile {
   background: url(http://gacco.org/images/top/bg01.png) repeat;
   border-bottom: 0 none;
