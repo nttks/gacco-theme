@@ -522,17 +522,20 @@ header.global ol li.primary>a:hover{
   }
 }
 
-/* ### change password page */
-.view-passwordreset .container{
+/* ### change password & resign page */
+.view-passwordreset .container,
+.view-resign .container{
 	max-width: 1180px;
 	width: 80%;
 }
-.view-passwordreset .introduction header{
+.view-passwordreset .introduction header,
+.view-resign .introduction header{
 	height: 120px;
 	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
 	background-color: #ccc;
 }
-.view-passwordreset header.global nav{
+.view-passwordreset header.global nav,
+.view-resign header.global nav{
 	width: auto;
 }
 
