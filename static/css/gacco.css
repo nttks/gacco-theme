@@ -522,6 +522,20 @@ header.global ol li.primary>a:hover{
   }
 }
 
+/* ### change password page */
+.view-passwordreset .container{
+	max-width: 1180px;
+	width: 80%;
+}
+.view-passwordreset .introduction header{
+	height: 120px;
+	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
+	background-color: #ccc;
+}
+.view-passwordreset header.global nav{
+	width: auto;
+}
+
 /* ### dashboard page */
 #unenroll_course_number{
 	text-transform: none;
