@@ -43,6 +43,9 @@ div.info-wrapper section.handouts ul li a:hover{
 	text-decoration: underline;
 	color: #1d9dd9;
 }
+.course-info .details .inner-wrapper .prerequisites ul li, .course-info .details .inner-wrapper .syllabus ul li{
+	font: normal;
+}
 
 @media screen and (max-width: 800px) {
   div.info-wrapper section.handouts {
