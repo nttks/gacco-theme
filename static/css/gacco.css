@@ -522,6 +522,23 @@ header.global ol li.primary>a:hover{
   }
 }
 
+/* ### change password & resign page */
+.view-passwordreset .container,
+.view-resign .container{
+	max-width: 1180px;
+	width: 80%;
+}
+.view-passwordreset .introduction header,
+.view-resign .introduction header{
+	height: 120px;
+	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
+	background-color: #ccc;
+}
+.view-passwordreset header.global nav,
+.view-resign header.global nav{
+	width: auto;
+}
+
 /* ### dashboard page */
 #unenroll_course_number{
 	text-transform: none;
@@ -647,6 +664,10 @@ nav ol.course-nav-menu {
 }
 
 /* ### course about page */
+.course-info .details .inner-wrapper .faq .responses{
+	float: inherit;
+}
+
 .course-info header.course-profile {
   background: url(http://gacco.org/images/top/bg01.png) repeat;
   border-bottom: 0 none;
