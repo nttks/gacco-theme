@@ -105,7 +105,7 @@
     //old method facebook: "http://graph.facebook.com/?id={url}&callback=?",
     //facebook : "http://api.ak.facebook.com/restserver.php?v=1.0&method=links.getStats&urls={url}&format=json"
     
-    twitter: "http://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
+    twitter: "https://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
     digg: "http://services.digg.com/2.0/story.getInfo?links={url}&type=javascript&callback=?",
     delicious: 'http://feeds.delicious.com/v2/json/urlinfo/data?url={url}&callback=?',
     //stumbleupon: "http://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}&format=jsonp&callback=?",
