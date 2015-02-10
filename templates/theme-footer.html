@@ -8,7 +8,8 @@
     course_about = reverse('about_course', args=[course.id.to_deprecated_string()])
     facebook_url = twitter_url = "{prot}://{fqdn}{uri}".format(prot=protocol, fqdn=settings.SITE_NAME, uri=course_about)
   else:
-    facebook_url = twitter_url = "{prot}://{fqdn}/".format(prot=protocol, fqdn=settings.SITE_NAME)
+    facebook_url = "{prot}://{fqdn}/".format(prot=protocol, fqdn=settings.SITE_NAME)
+    twitter_url = "http://gacco.org/"
 %>
 
 
