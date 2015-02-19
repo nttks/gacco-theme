@@ -436,7 +436,7 @@ header.global ol li.primary>a:hover{
 .view-login .introduction header,
 .view-register .introduction header{
 	height: 120px;
-	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
+	background: transparent url("../images/bar_about.png") -330px 0px repeat;
 	background-color: #ccc;
 }
 .view-register .introduction header .title .title-super,
@@ -531,7 +531,7 @@ header.global ol li.primary>a:hover{
 .view-passwordreset .introduction header,
 .view-resign .introduction header{
 	height: 120px;
-	background: transparent url("http://gacco.org/images/common/bar_about.png") -330px 0px repeat;
+	background: transparent url("../images/bar_about.png") -330px 0px repeat;
 	background-color: #ccc;
 }
 .view-passwordreset header.global nav,
@@ -669,7 +669,7 @@ nav ol.course-nav-menu {
 }
 
 .course-info header.course-profile {
-  background: url(http://gacco.org/images/top/bg01.png) repeat;
+  background: url("../images/bg01.png") repeat;
   border-bottom: 0 none;
   box-shadow: none;
   height: auto;
