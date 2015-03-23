@@ -55,7 +55,7 @@ header.global nav {
   height: auto;
   padding-top: 12px;
 }
-header.global .nav-courseware li .cta > i[class^="icon-"] {
+header.global .nav-courseware li .cta > i[class^="fa fa-"] {
   margin-right: 8px;
 }
 
@@ -119,7 +119,7 @@ header.global ol li.primary>a:hover{
     height: 45px;
     font-size: 8px;
   }
-  header.global .nav-courseware li .cta > i[class^="icon-"] {
+  header.global .nav-courseware li .cta > i[class^="fa fa-"] {
     display: block;
     font-size: 30px;
     margin: 0;

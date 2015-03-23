@@ -133,7 +133,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc .icon-list-alt {
   white-space: nowrap;
   max-width: 85%;
 }
-#modal-accordion .modal-close.icon-remove {
+#modal-accordion .modal-close.fa-remove {
   color: #fff;
   cursor: pointer;
   font-size: 25px;
@@ -471,10 +471,10 @@ body.discussion .forum-guideline {
   margin-top: -14px;
   padding: 7px;
 }
-.forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .icon-remove {
+.forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .fa-remove {
   right: 30px;
 }
-.forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .icon-search {
+.forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .fa-search {
   background-color: #c2c2c2;
   border: 1px solid #808080;
   border-bottom-right-radius: 3px;
@@ -553,7 +553,7 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
     margin-top: -22px;
     padding: 13px;
   }
-  body.discussion .forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .icon-remove {
+  body.discussion .forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .fa-remove {
     right: 50px;
   }
   body.discussion .forum-nav-header > .forum-nav-search .forum-nav-search-ff-position-fix .forum-nav-search-input {
@@ -666,8 +666,8 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
 }
 
 /* forum-nav-refine-bar -> add icon(filter/sort)*/
-.forum-nav-refine-bar > .forum-nav-filter-main .icon-filter,
-.forum-nav-refine-bar > .forum-nav-sort .icon-sort {
+.forum-nav-refine-bar > .forum-nav-filter-main .fa-filter,
+.forum-nav-refine-bar > .forum-nav-sort .fa-sort {
   cursor: default;
 }
 

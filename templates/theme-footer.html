@@ -19,16 +19,16 @@
       <nav class="nav-colophon">
         <ol>
             <li class="nav-colophon-01">
-              <a href="${marketing_link('TOS')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("Terms of Service and Honor Code")}</a>
+              <a href="${marketing_link('TOS')}" rel="noreferrer"><i class="fa fa-chevron-circle-right"></i>${_("Terms of Service and Honor Code")}</a>
             </li>
             <li class="nav-colophon-02">
-              <a href="${marketing_link('PRIVACY')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("Privacy Policy")}</a>
+              <a href="${marketing_link('PRIVACY')}" rel="noreferrer"><i class="fa fa-chevron-circle-right"></i>${_("Privacy Policy")}</a>
             </li>
             <li class="nav-colophon-03">
-              <a id="faq" href="${marketing_link('FAQ')}" rel="noreferrer"><i class="icon-chevron-sign-right"></i>${_("FAQ")}</a>
+              <a id="faq" href="${marketing_link('FAQ')}" rel="noreferrer"><i class="fa fa-chevron-circle-right"></i>${_("FAQ")}</a>
             </li>
             <li class="nav-colophon-04 help-tab">
-              <a href="#help-modal" rel="leanModal" role="button"><i class="icon-chevron-sign-right"></i>${_("Help")}</a>
+              <a href="#help-modal" rel="leanModal" role="button"><i class="fa fa-chevron-circle-right"></i>${_("Help")}</a>
             </li>
         </ol>
       </nav>
@@ -61,7 +61,7 @@ $('#gacco-twitter').sharrre({
   buttons: {
     twitter: {count: 'horizontal', hashtags: '#gacco'}
   },
-  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="icon-twitter-sign"></i><span>Tweet</span></div></a>',
+  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter-square"></i><span>Tweet</span></div></a>',
   enableHover: false,
   enableTracking: true,
   click: function(api, options) {
@@ -76,7 +76,7 @@ $('#gacco-facebook').sharrre({
   buttons: {
     facebook: {action: 'like', layout: 'button_count'}
   },
-  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="icon-facebook-sign"></i><span>Like</span></div></a>',
+  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i><span>Like</span></div></a>',
   enableHover: false,
   enableTracking: true,
   click: function(api, options) {
