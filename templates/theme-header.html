@@ -41,7 +41,7 @@ site_status_msg = get_site_status_msg(course_id)
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
-            <img src="${static.url('themes/gacco/images/gacco_logo.png')}" alt="${platform_name()}"/>
+	    <img src="${static.url('themes/gacco/images/gacco_logo.png')}" alt="${platform_name()}"/>
         </%block>
       </a>
     </h1>
@@ -58,7 +58,7 @@ site_status_msg = get_site_status_msg(course_id)
     <ol class="user">
       <li class="primary">
         <a href="${reverse('dashboard')}" class="user-link">
-          <i class="avatar fa fa-home"></i>
+          <span class="avatar fa fa-home"></span>
           <span class="sr">${_("Dashboard for:")} </span> ${user.username}
         </a>
       </li>
@@ -66,36 +66,30 @@ site_status_msg = get_site_status_msg(course_id)
         <a href="#" class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span> &#9662;</a>
         <ul class="dropdown-menu" aria-label="More Options" role="menu">
           <%block name="navigation_dropdown_menu_links" >
-            % if course:
-              <li>
-                <a href="${reverse('dashboard')}">${_("Dashboard")}</a>
-              </li>
-            % endif
+	    % if course:
+	      <li>
+		<a href="${reverse('dashboard')}">${_("Dashboard")}</a>
+	      </li>
+	    % endif
             % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
               <li><a href="${marketing_link('FAQ')}">${_("FAQ")}</a></li>
             % endif
           </%block>
-          <li class="help-tab">
-            <a href="#help-modal" rel="leanModal" role="button">${_("Help")}</a>
-          </li>
-          <li><a href="${reverse('logout')}" role="menuitem">${_("Log Out")}</a></li>
-        % if masquerade is not UNDEFINED:
-          % if staff_access and masquerade is not None:
-          <li><a href="#" id="staffstatus">${_("Staff view")}</a></li>
-          % endif
-        % endif
-
+	  <li class="help-tab">
+	    <a href="#help-modal" rel="leanModal" role="button">${_("Help")}</a>
+	  </li>
+          <li><a href="${reverse('logout')}" role="menuitem">${_("Log out")}</a></li>
         </ul>
       </li>
     </ol>
     <ol class="course-nav-menu">
       <div class="menu-button">${_("Menu")}</div>
     </ol>
-      % if display_shopping_cart: # see shoppingcart.context_processor.user_has_cart_context_processor
+      % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
           <li class="primary">
             <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
-              <i class="fa fa-shopping-cart"></i> ${_("Shopping Cart")}
+              <i class="icon fa fa-shopping-cart"></i> ${_("Shopping Cart")}
             </a>
           </li>
         </ol>
@@ -115,12 +109,13 @@ site_status_msg = get_site_status_msg(course_id)
           </li>
         % endif
       </%block>
+    </ol>
 
     <ol class="right nav-courseware">
     <li class="nav-courseware-02">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-          <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
+	  <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
           % else:
           <a class="cta cta-login" href="/login${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
           % endif
@@ -129,9 +124,13 @@ site_status_msg = get_site_status_msg(course_id)
     <li class="nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+          <li class="nav-global-04">
             <a class="cta cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}"><i class="fa fa-user"></i>${_("Register Now")}</a>
+          </li>
           % else:
+          <li class="nav-global-04">
             <a class="cta cta-register" href="/register"><i class="fa fa-user"></i>${_("Register Now")}</a>
+          </li>
           % endif
       % endif
     </li>
