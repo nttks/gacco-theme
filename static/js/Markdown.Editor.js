@@ -1218,9 +1218,9 @@
                     case "k":
                         doClick(buttons.code);
                         break;
-                    //case "g":
-                    //    doClick(buttons.image);
-                    //    break;
+                    case "g":
+                        doClick(buttons.image);
+                        break;
                     case "o":
                         doClick(buttons.olist);
                         break;
@@ -1456,9 +1456,9 @@
             }));
             buttons.quote = makeButton("wmd-quote-button", gettext("Blockquote (Ctrl+Q)"), "-60px", bindCommand("doBlockquote"));
             buttons.code = makeButton("wmd-code-button", gettext("Code Sample (Ctrl+K)"), "-80px", bindCommand("doCode"));
-            //buttons.image = makeButton("wmd-image-button", gettext("Image (Ctrl+G)"), "-100px", bindCommand(function (chunk, postProcessing) {
-            //    return this.doLinkOrImage(chunk, postProcessing, true, imageUploadHandler);
-            //}));
+            buttons.image = makeButton("wmd-image-button", gettext("Image (Ctrl+G)"), "-100px", bindCommand(function (chunk, postProcessing) {
+                return this.doLinkOrImage(chunk, postProcessing, true, imageUploadHandler);
+            }));
             makeSpacer(2);
             buttons.olist = makeButton("wmd-olist-button", gettext("Numbered List (Ctrl+O)"), "-120px", bindCommand(function (chunk, postProcessing) {
                 this.doList(chunk, postProcessing, true);
