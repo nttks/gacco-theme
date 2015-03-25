@@ -36,37 +36,24 @@ def mobile_tab(tab_type="false"):
   masquerade_group_id = masquerade.group_id if masquerade else None
 %>
 
-<%doc>
-% if show_preview_menu:
-    <nav class="wrapper-preview-menu">
-        <div class="preview-menu">
-            <ol class="preview-actions">
-                <li class="action-preview">
-                    <form action="#" class="action-preview-form" method="post">
-                        <label for="action-preview-select" class="action-preview-label">${_("View this course as:")}</label>
-                        <select class="action-preview-select" id="action-preview-select" name="select">
-                            <option value="staff" ${"selected" if not is_student_masquerade else ""}>${_("Staff")}</option>
-                            <option value="student" ${"selected" if is_student_masquerade and not masquerade_group_id else ""}>${_("Student")}</option>
-                            % if cohorted_user_partition:
-                                % for group in sorted(cohorted_user_partition.groups, key=lambda group: group.name):
-                                <option value="group.id" data-group-id="${group.id}" ${"selected" if masquerade_group_id == group.id else ""}>
-                                    ${_("Student in {content_group}").format(content_group=group.name)}
-                                </option>
-                                % endfor
-                            % endif
-                        </select>
-                        <button type="submit" class="sr" name="submit" value="submit">${_("set preview mode")}</button>
-                    </form>
-                </li>
-            </ol>
-        </div>
-    </nav>
-% endif
-</%doc>
-
 % if disable_tabs is UNDEFINED or not disable_tabs:
 <nav class="${active_page} wrapper-course-material nav-hidden">
   <div class="course-material">
+    % if show_preview_menu:
+    <div id="wrapper-preview">
+        <select class="action-preview-select" name="select">
+            <option value="staff" ${"selected" if not is_student_masquerade else ""}>${_("Staff")}</option>
+            <option value="student" ${"selected" if is_student_masquerade and not masquerade_group_id else ""}>${_("Student")}</option>
+            % if cohorted_user_partition:
+                % for group in sorted(cohorted_user_partition.groups, key=lambda group: group.name):
+                <option value="group.id" data-group-id="${group.id}" ${"selected" if masquerade_group_id == group.id else ""}>
+                    ${_("Student in {content_group}").format(content_group=group.name)}
+                </option>
+                % endfor
+            % endif
+        </select>
+    </div>
+    % endif
     <ol class="course-tabs">
       % for tab in get_course_tab_list(course, user):
         <%

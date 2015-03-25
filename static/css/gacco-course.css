@@ -34,6 +34,22 @@ body {
   }
 }
 
+/* ### masquerade preview */
+#wrapper-preview {
+  position: relative;
+  float: right;
+  margin-top: -22px;
+  font-size: 12px;
+  z-index: 200;
+}
+
+@media screen and (max-width: 800px) {
+  #wrapper-preview {
+    margin-top: -40px;
+    padding-right: 100px;
+  }
+}
+
 /* ### course info page */
 div.info-wrapper section.handouts ul{
 	background-color: transparent;
