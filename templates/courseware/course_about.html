@@ -111,6 +111,40 @@ from edxmako.shortcuts import marketing_link
   </script>
 
   <script src="${static.url('js/course_info.js')}"></script>
+  <script src="${static.url('themes/gacco/js/vendor/sharrre/jquery.sharrre.min.js')}"></script>
+  <script>
+  $('#social-plugins').show();
+  $('#gacco-twitter').sharrre({
+    share: {
+      twitter: true
+    },
+    buttons: {
+      twitter: {count: 'horizontal', hashtags: '#gacco'}
+    },
+    template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter-square"></i><span>Tweet</span></div></a>',
+    enableHover: false,
+    enableTracking: true,
+    click: function(api, options) {
+      api.simulateClick();
+      api.openPopup('twitter');
+    }
+  });
+  $('#gacco-facebook').sharrre({
+    share: {
+      facebook: true
+    },
+    buttons: {
+      facebook: {action: 'like', layout: 'button_count'}
+    },
+    template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i><span>Like</span></div></a>',
+    enableHover: false,
+    enableTracking: true,
+    click: function(api, options) {
+      api.simulateClick();
+      api.openPopup('facebook');
+    }
+  });
+  </script>
 </%block>
 
 <%block name="pagetitle">${get_course_about_section(course, "title")}</%block>

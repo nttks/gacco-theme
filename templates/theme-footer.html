@@ -2,15 +2,6 @@
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
 <%namespace name='static' file='static_content.html'/>
-<%
-  protocol = "https" if is_secure else "http"
-  if course:
-    course_about = reverse('about_course', args=[course.id.to_deprecated_string()])
-    facebook_url = twitter_url = "{prot}://{fqdn}{uri}".format(prot=protocol, fqdn=settings.SITE_NAME, uri=course_about)
-  else:
-    facebook_url = "{prot}://{fqdn}/".format(prot=protocol, fqdn=settings.SITE_NAME)
-    twitter_url = "http://gacco.org/"
-%>
 
 
 <div class="wrapper wrapper-footer edxyfooter">
@@ -32,9 +23,9 @@
             </li>
         </ol>
       </nav>
-      <div id="social-plugins">
-        <div id="gacco-twitter" data-url="${twitter_url}" data-text="無料オンライン大学講座「gacco」登録受付中！" data-title="Twitter"></div>
-        <div id="gacco-facebook" data-url="${facebook_url}" data-title="Facebook"></div>
+      <div id="social-plugins" style="display: none;">
+        <div id="gacco-twitter" data-url="http://gacco.org/" data-text="無料オンライン大学講座「gacco」登録受付中！" data-title="Twitter"></div>
+        <div id="gacco-facebook" data-url="http://gacco.org/" data-title="Facebook"></div>
         <div id="gacco-blog">
           <a href="${marketing_link('BLOG')}" target="_blank" rel="noreferrer">Blog</a>
         </div>
@@ -52,39 +43,6 @@
   </footer>
 </div>
 <%include file="help_modal.html"/>
-<script src="${static.url('themes/gacco/js/vendor/sharrre/jquery.sharrre.min.js')}"></script>
-<script>
-$('#gacco-twitter').sharrre({
-  share: {
-    twitter: true
-  },
-  buttons: {
-    twitter: {count: 'horizontal', hashtags: '#gacco'}
-  },
-  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter-square"></i><span>Tweet</span></div></a>',
-  enableHover: false,
-  enableTracking: true,
-  click: function(api, options) {
-    api.simulateClick();
-    api.openPopup('twitter');
-  }
-});
-$('#gacco-facebook').sharrre({
-  share: {
-    facebook: true
-  },
-  buttons: {
-    facebook: {action: 'like', layout: 'button_count'}
-  },
-  template: '<a class="box" href="#" rel="noreferrer"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i><span>Like</span></div></a>',
-  enableHover: false,
-  enableTracking: true,
-  click: function(api, options) {
-    api.simulateClick();
-    api.openPopup('facebook');
-  }
-});
-</script>
 <script type="text/javascript">
   var _dcmlinker = _dcmlinker || new Array();
   _dcmlinker.push("gacco.org");
