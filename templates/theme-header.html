@@ -115,22 +115,18 @@ site_status_msg = get_site_status_msg(course_id)
     <li class="nav-courseware-02">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-	  <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
+            <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
           % else:
-          <a class="cta cta-login" href="/login${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
+            <a class="cta cta-login" href="/login${login_query()}"><i class="fa fa-home"></i>${_("Log in")}</a>
           % endif
       % endif
     </li>
     <li class="nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-          <li class="nav-global-04">
             <a class="cta cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}"><i class="fa fa-user"></i>${_("Register Now")}</a>
-          </li>
           % else:
-          <li class="nav-global-04">
             <a class="cta cta-register" href="/register"><i class="fa fa-user"></i>${_("Register Now")}</a>
-          </li>
           % endif
       % endif
     </li>
