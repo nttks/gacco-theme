@@ -676,6 +676,43 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
   .container .discussion-user-threads .discussion-reply-new {
     padding: 10px;
   }
+
+  body.discussion .discussion-post, .forum-thread-main-wrapper {
+    padding: 5px;
+  }
+
+  .container .discussion-body .responses,
+  .container .discussion-module .responses,
+  .container .discussion-user-threads .responses {
+    padding: 0 20px;
+  }
+
+  .container .discussion-body .responses .discussion-response,
+  .container .discussion-module .responses .discussion-response,
+  .container .discussion-user-threads .responses .discussion-response {
+    padding: 10px;
+  }
+
+  body.discussion .discussion-response .response-header-actions,
+  .discussion-module .discussion-response .response-header-actions,
+  .discussion-user-threads .discussion-response .response-header-actions {
+    width: 45%;
+  }
+
+  body.discussion .discussion-response .response-header-content,
+  .discussion-module .discussion-response .response-header-content,
+  .discussion-user-threads .discussion-response .response-header-content {
+    width: 55%;
+  }
+
+  body.discussion .comments .response-body,
+  .discussion-module .comments .response-body,
+  .discussion-user-threads .comments .response-body, 
+  body.discussion .comments .comment-actions-list,
+  .discussion-module .comments .comment-actions-list,
+  .discussion-user-threads .comments .comment-actions-list {
+    width: 100%;
+  }
 }
 
 /* forum-nav-refine-bar -> add icon(filter/sort)*/
