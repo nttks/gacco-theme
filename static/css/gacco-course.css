@@ -725,7 +725,8 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-0 {
   display: none;
 }
-.forum-new-post-form .post-field.hidden-post-field  {
+.forum-new-post-form .post-field.hidden-post-field,
+.forum-edit-post-form-wrapper .post-field.hidden-post-field {
   display: none;
 }
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-1 {
