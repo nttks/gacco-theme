@@ -195,7 +195,8 @@
 
           <li class="field required password" id="field-password">
             <label for="password">${_('Password')}</label>
-            <input id="password" type="password" name="password" value="" required aria-required="true" />
+            <input id="password" type="password" name="password" value="" required aria-required="true" aria-describedby="password-tip"/>
+            <span class="tip tip-input" id="password-tip">${_('{password_min_length} alphanumeric characters or more').format(password_min_length=settings.PASSWORD_MIN_LENGTH)} (${_('It includes single-byte uppercase and lowercase letters, numbers, one or more characters')})</span>
           </li>
 
           % endif
