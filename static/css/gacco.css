@@ -59,7 +59,7 @@ header.global .nav-courseware li .cta > i[class^="fa fa-"] {
   margin-right: 8px;
 }
 
-.view-register header.global nav, .view-login header.global nav {
+.view-register header.global nav, .view-login header.global nav, .view-authorize header.global nav {
   width: auto;
 }
 
@@ -155,7 +155,7 @@ header.global ol li.primary>a:hover{
   min-width: 0;
 }
 
-.view-register .wrapper-footer footer, .view-login .wrapper-footer footer, .view-passwordreset .wrapper-footer footer, .view-resign .wrapper-footer footer {
+.view-register .wrapper-footer footer, .view-login .wrapper-footer footer, .view-passwordreset .wrapper-footer footer, .view-resign .wrapper-footer footer, .view-authorize .wrapper-footer footer {
   width: auto;
 }
 
@@ -466,7 +466,7 @@ header.global ol li.primary>a:hover{
 	color: #333;
 }
 
-#content section.introduction, #content section.login, #content section.register {
+#content section.introduction, #content section.login, #content section.register, #content section.authorize {
   max-width: 1180px;
   width: 80%;
 }
@@ -1165,4 +1165,61 @@ html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
   h6, h5, h4 {
     font-size: 12px;
   }
+}
+
+.view-authorize ul.authorize-scope {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style-type: none;
+  border-bottom: solid 1px silver;
+}
+
+.view-authorize ul.authorize-scope li {
+  position: relative;
+  padding: 10px 0;
+  border-top: solid 1px silver;
+}
+
+.view-authorize ul.authorize-scope li a {
+  color: gray;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.view-authorize ul.authorize-scope li a {
+  border-style: none;
+}
+
+.view-authorize .authorize-info-desc {
+  padding-left: 10px;
+}
+
+.view-authorize div.authorize-title a {
+  border-bottom: 1px dotted;
+}
+
+.view-authorize div.authorize-title a:hover {
+  text-decoration: none;
+}
+
+.view-authorize .policy_message {
+  margin-top: 20px !important;
+  font-size: 13px !important;
+}
+
+.view-authorize button.action-authorize {
+  background-color: #43ac6a;
+  background-image: none;
+}
+
+.view-authorize button.action-cancel {
+  background-color: #666666 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.view-authorize button.action-cancel:hover {
+  background-color: #222 !important;
 }
