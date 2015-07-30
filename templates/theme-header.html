@@ -5,15 +5,15 @@
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
+from microsite_configuration import microsite
+from microsite_configuration.templatetags.microsite import platform_name
+from ccx.overrides import get_current_ccx
+
 # App that handles subdomain specific branding
 import branding
 # app that handles site status messages
 from status.status import get_site_status_msg
 %>
-
-<%! from microsite_configuration import microsite %>
-<%! from microsite_configuration.templatetags.microsite import platform_name %>
-<%! from ccx.overrides import get_current_ccx %>
 
 ## Provide a hook for themes to inject branding on top.
 <%block name="navigation_top" />
@@ -38,7 +38,7 @@ site_status_msg = get_site_status_msg(course_id)
 </%block>
 
   <header id="global-navigation" class="global ${"slim" if course else ""}" >
-    <nav aria-label="${_('Global')}">
+    <nav class="nav-wrapper" aria-label="${_('Global')}">
     <h1 class="logo">
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
@@ -48,12 +48,12 @@ site_status_msg = get_site_status_msg(course_id)
     </h1>
 
     % if course:
-    <h2><span class="provider">${course.display_org_with_default | h}:</span> 
+    <h2 class="course-header"><span class="provider">${course.display_org_with_default | h}:</span>
       ${course.display_number_with_default | h}
       <%
         display_name = course.display_name_with_default
         if settings.FEATURES.get('CUSTOM_COURSES_EDX', False):
-          ccx = get_current_ccx()
+          ccx = get_current_ccx(course.id)
           if ccx:
             display_name = ccx.display_name
       %>
@@ -63,12 +63,6 @@ site_status_msg = get_site_status_msg(course_id)
     % if user.is_authenticated():
     <ol class="left nav-global authenticated">
       <%block name="navigation_global_links_authenticated">
-        %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
-          <li>
-            ## Translators: This is short for "System administration".
-            <a href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
-          </li>
-        %endif
       </%block>
     </ol>
     <ol class="user">
@@ -99,9 +93,12 @@ site_status_msg = get_site_status_msg(course_id)
               <a href="#help-modal" rel="leanModal" role="button">${_("Help")}</a>
             </li>
           </%block>
-          <li><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></li>
+          <li><a href="${reverse('logout')}" role="menuitem">${_("Log Out")}</a></li>
         </ul>
       </li>
+    </ol>
+    <ol class="course-nav-menu">
+      <div class="menu-button">${_("Menu")}</div>
     </ol>
       % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
@@ -113,7 +110,7 @@ site_status_msg = get_site_status_msg(course_id)
         </ol>
       % endif
     % else:
-    <ol class="left nav-global">
+    <ol class="right nav-global">
       <%block name="navigation_global_links">
         % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
           <li class="nav-global-01">
@@ -161,4 +158,3 @@ site_status_msg = get_site_status_msg(course_id)
 %if not user.is_authenticated():
   <%include file="forgot_password_modal.html" />
 %endif
-

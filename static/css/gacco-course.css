@@ -38,29 +38,33 @@ body {
 #wrapper-preview {
   position: relative;
   float: right;
-  margin-top: -22px;
+  margin-top: -34px;
   font-size: 12px;
   z-index: 200;
 }
 
 @media screen and (max-width: 800px) {
+  body.view-incourse .wrapper-course-material .course-material,
+  body.view-incourse .wrapper-preview-menu .preview-menu {
+    padding: 0;
+  }
   #wrapper-preview {
     margin-top: -40px;
-    padding-right: 100px;
+    padding-right: 120px;
   }
 }
 
 /* ### course info page */
-div.info-wrapper section.handouts ul{
-	background-color: transparent;
-	padding: 3px 16px 3px 16px;
+div.info-wrapper section.handouts ol {
+  background-color: transparent;
+  padding: 3px 16px 3px 16px;
 }
-div.info-wrapper section.handouts ul li a:hover{
-	text-decoration: underline;
-	color: #1d9dd9;
+div.info-wrapper section.handouts ol li a:hover{
+  text-decoration: underline !important;
+  color: #1d9dd9;
 }
-.course-info .details .inner-wrapper .prerequisites ul li, .course-info .details .inner-wrapper .syllabus ul li{
-	font: normal;
+.course-info .details .inner-wrapper .prerequisites ol li, .course-info .details .inner-wrapper .syllabus ul li{
+  font: normal;
 }
 
 @media screen and (max-width: 800px) {
@@ -725,7 +729,8 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-0 {
   display: none;
 }
-.forum-new-post-form .post-field.hidden-post-field  {
+.forum-new-post-form .post-field.hidden-post-field,
+.forum-edit-post-form-wrapper .post-field.hidden-post-field {
   display: none;
 }
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-1 {
@@ -991,9 +996,35 @@ nav.wrapper-course-material ol.course-tabs li .tab-icon {
 }
 
 /* courseware next/prev buttons (./lms/templates/seq_module.html)*/
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:hover:not(:disabled),
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:active:not(:disabled),
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:focus:not(:disabled) {
+  background-color: #e4e4e4;
+  transition: none;
+  box-shadow: none;
+}
 @media screen and (max-width: 800px) {
   div.course-wrapper section.course-content {
     position: relative;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom {
+    width: auto;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button {
+    margin-top: 10px;
+    width: 52px;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button.button-next {
+    margin-right: -10px;
+    padding-top: 4px;
+    padding-left: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button.button-previous {
+    margin-left: -10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
   .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.prev,
   .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next {
@@ -1064,6 +1095,10 @@ nav.wrapper-course-material ol.course-tabs li .tab-icon {
 /*### course-tab */
 .content-wrapper {
   background: #fff;
+}
+
+.content-wrapper .container-footer {
+  min-width: 0;
 }
 
 nav.wrapper-course-material {
