@@ -13,12 +13,6 @@ header.global {
   box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
-header.global .nav-courseware ol{
-  margin-top: 0px;
-}
-.home > header .outer-wrappe {
-  min-width: 0;
-}
 header.global .nav-global li{
   margin-top: 0px;
   margin-right: 0px;
@@ -35,24 +29,24 @@ header.global h1.logo {
   margin: 0 0 0 5px;
 }
 header.global h1.logo img{
-	height: 55px;
-	padding-top: 0px;
-	margin-top: 0px;
-	width: auto;
+  height: 55px;
+  padding-top: 0px;
+  margin-top: 0px;
+  width: auto;
 }
 header.global.slim h1.logo img{
-	height: 55px;
-	width: auto;
-	margin-top: 0px;
+  height: 55px;
+  width: auto;
+  margin-top: 0px;
 }
 header.global.slim{
-	padding: 5px 0 5px 0;
-	box-shadow: none;
-	border: none;
-	height: auto;
+  padding: 5px 0 5px 0;
+  box-shadow: none;
+  border: none;
+  height: auto;
 }
 header.global.slim nav{
-	padding-top: 5px;
+  padding-top: 5px;
 }
 header.global nav {
   min-width: 0 !important;
@@ -68,9 +62,7 @@ header.global .nav-courseware li .cta > i[class^="fa fa-"] {
 }
 
 /* home icon */
-header.global ol.user > li.primary > a.user-link .avatar {
-  background-image: none;
-  color: #3c3c3c;
+header.global ol.user > li.primary > a.user-link .icon {
   font-size: 1.3em;
   text-indent: 0;
   margin-top: 0px;
@@ -80,25 +72,8 @@ header.global ol.user {
   background-image: none;
   border-radius: 2px;
 }
-header.global ol user:hover {
-	background-image: none;
-	background-color: #eee;
-}
-header.global ol.user>li.primary>a{
-	background-color: #fff;
-	background-image: none;
-}
-header.global ol.user>li.primary>a:hover{
-	background-image: none;
-	background-color: #eee;
-}
-header.global ol li.primary>a{
-	background-color: #fff;
-	background-image: none;
-}
 header.global ol li.primary>a:hover{
-	background-image: none;
-	background-color: #eee;
+  background-color: #eee;
 }
 
 
@@ -110,9 +85,9 @@ header.global ol li.primary>a:hover{
     /* margin-top: 5px; */
   }
   header.global h1.logo img {
-	margin-top: 5px;
-	width: auto;
-	height: 50px;
+    margin-top: 5px;
+    width: auto;
+    height: 50px;
   }
   header.global .nav-courseware li {
     margin-right: 5px;
@@ -232,13 +207,13 @@ header.global ol li.primary>a:hover{
   padding: 4px;
 }
 #gacco-blog > a:before {
-    background-color: #d24d57;
-    border-radius: 3px;
-    color: #fff;
-    content: "B";
-    font-size: 14px;
-    margin-right: 4px;
-    padding: 0 4px;
+  background-color: #d24d57;
+  border-radius: 3px;
+  color: #fff;
+  content: "B";
+  font-size: 14px;
+  margin-right: 4px;
+  padding: 0 4px;
 }
 .sharrre .box{
   float:left;
@@ -257,11 +232,11 @@ header.global ol li.primary>a:hover{
   border-radius:4px;
 }
 .count:before {
-    border: 10px solid transparent;
-    border-right: 10px solid #bbb;
-    content: "";
-    position: absolute;
-    right: 100%;
+  border: 10px solid transparent;
+  border-right: 10px solid #bbb;
+  content: "";
+  position: absolute;
+  right: 100%;
 }
 .sharrre .share {
   display: block;
@@ -304,7 +279,6 @@ header.global ol li.primary>a:hover{
   max-width:50px;
   margin-left:10px;
 }
-
 
 @media screen and (max-width: 800px) {
   .wrapper-footer {
@@ -364,9 +338,9 @@ header.global ol li.primary>a:hover{
   #gacco-blog {
     clear: both;
   }
-	.sharrre .count {
-	padding:15px 20px;
-	}
+  .sharrre .count {
+    padding:15px 20px;
+  }
 }
 @media screen and (max-width: 480px) {
   .wrapper-footer footer .colophon .nav-colophon,
@@ -418,7 +392,6 @@ header.global ol li.primary>a:hover{
 
 /* top page / find courses */
 .container {
-  min-width: 0;
   width: auto; /* for dashboard */
   padding: 0 30px;
 }
@@ -436,79 +409,30 @@ header.global ol li.primary>a:hover{
 }
 
 /* ### login/register page */
-.view-login .introduction header,
-.view-register .introduction header{
-	height: 120px;
-	background: transparent url("../images/bar_about.png") -330px 0px repeat;
-	background-color: #ccc;
-}
-.view-register .introduction header .title .title-super,
-.view-login .introduction header .title .title-super,
-.view-passwordreset .introduction header .title .title-super,
-.view-resign .introduction header .title .title-super{
-	font-size: 26px;
-	line-height: normal;
-	text-transform: none;
-	color: #333;
-	font-weight: bold;
-	margin-top: -21px;
-}
-@media screen and (max-width: 800px) {
-	.view-register .introduction header .title .title-super,
-	.view-login .introduction header .title .title-super,
-	.view-passwordreset .introduction header .title .title-super,
-	.view-resign .introduction header .title .title-super{
-		margin-top: 18px;
-	}
-}
-.view-login .introduction header .title .title-sub,
-.view-register .introduction header .title .title-sub{
-	font-size: 20px;
-	margin-left: 2px;
-	text-transform: lowercase;
-	color: #333;
+#login-and-registration-container {
+  margin-bottom: 40px;
 }
 
-#content section.introduction, #content section.login, #content section.register, #content section.authorize {
-  max-width: 1180px;
-  width: 80%;
+.login-register .form-field.select-year_of_birth {
+  margin-left: 14px;
 }
 
-.login aside, .register aside, .passwordreset aside, .resign aside, #forgot-password-modal #password-reset aside {
-  width: 35%;
+.login-register .form-type,
+.login-register .toggle-form {
+  min-width: 0;
 }
 
-.login .content, .register .content, .passwordreset .content, .resign .content, #forgot-password-modal #password-reset .conten {
-  width: 55%;
+.login-register .form-field label[for="register-honor_code"] {
+  width: 85%;
 }
 
-.register .form-actions span.minority {
-  font-size: 10px;
+.login-register .form-field label[for="register-terms_of_service"] {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  width: 85%;
+  vertical-align: top;
 }
 
-@media screen and (max-width: 800px) {
-  #content section.introduction, #content section.login, #content section.register {
-    width: 100%;
-  }
-  .login aside, .register aside, .passwordreset aside, .resign aside, #forgot-password-modal #password-reset aside {
-    width: 100%;
-    margin-top: 20%;
-  }
-  .login .content, .register .content, .passwordreset .content, .resign .content, #forgot-password-modal #password-reset .conten {
-    width: 100%;
-  }
-  .view-register .introduction header .title .title-sub, .view-login .introduction header .title .title-sub, .view-passwordreset .introduction header .title .title-sub, .view-resign .introduction header .title .title-sub {
-    font-size: 15px;
-    margin-left: 10px;
-  }
-  #field-password .tip-input {
-    position: relative;
-  }
-  .view-register .introduction header .title, .view-login .introduction header .title, .view-passwordreset .introduction header .title, .view-resign .introduction header .title {
-    left: 10px;
-    top: 10px;
-  }
-}
 
 /* ### activate page */
 .container.activation .message {
@@ -526,51 +450,91 @@ header.global ol li.primary>a:hover{
 }
 
 /* ### change password & resign page */
+#content section.introduction {
+  max-width: 1180px;
+  width: 80%;
+}
+.view-passwordreset .introduction header .title .title-super,
+.view-resign .introduction header .title .title-super {
+  font-size: 26px;
+  line-height: normal;
+  text-transform: none;
+  color: #333;
+  font-weight: bold;
+  margin-top: -21px;
+}
 .view-passwordreset .container,
 .view-resign .container{
-	max-width: 1180px;
-	width: 80%;
+  max-width: 1180px;
+  width: 80%;
 }
 .view-passwordreset .introduction header,
 .view-resign .introduction header{
-	height: 120px;
-	background: transparent url("../images/bar_about.png") -330px 0px repeat;
-	background-color: #ccc;
+  height: 120px;
+  background: transparent url("../images/bar_about.png") -330px 0px repeat;
+  background-color: #ccc;
 }
 .view-passwordreset header.global nav,
 .view-resign header.global nav{
-	width: auto;
+  width: auto;
+}
+
+.passwordreset aside, .resign aside {
+  width: 35%;
+}
+
+.passwordreset .content, .resign .content {
+  width: 55%;
+}
+
+@media screen and (max-width: 800px) {
+  .view-passwordreset .introduction header .title .title-super,
+  .view-resign .introduction header .title .title-super{
+    margin-top: 18px;
+  }
+  .passwordreset aside, .resign aside {
+    width: 100%;
+    margin-top: 20%;
+  }
+  .passwordreset .content, .resign .content {
+    width: 100%;
+  }
+  .view-passwordreset .introduction header .title .title-sub,
+  .view-resign .introduction header .title .title-sub {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  #field-password .tip-input {
+    position: relative;
+  }
+  .view-passwordreset .introduction header .title,
+  .view-resign .introduction header .title {
+    left: 10px;
+    top: 10px;
+  }
 }
 
 /* ### dashboard page */
-#unenroll_course_number{
-	text-transform: none;
-}
 #dashboard-main {
   padding-top: 30px;
 }
 
 .dashboard .my-courses .course{
-	z-index: 99;
+  z-index: 99;
 }
 
 .dashboard .my-courses .course .cover{
-	height: auto;
+  height: auto;
 }
 .dashboard .my-courses .course .cover img{
-	height: auto;
-	min-height: 0px;
-}
-.dashboard .my-courses .course .info {
-  float: left;
-  padding: 0 10px 0 30px;
-  width: 60%;
+  height: auto;
+  min-height: 0px;
 }
 .dashboard .dashboard-banner{
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 .dashboard .dashboard-banner p{
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 #dashboard-sidebar {
   float: right;
@@ -582,30 +546,6 @@ header.global ol li.primary>a:hover{
 }
 .dashboard .profile-sidebar h2.username-header{
   margin-bottom: 0;
-}
-
-@media screen and (max-width: 620px) {
-	.dashboard .my-courses .course .details .wrapper-course-image {
-		width: 100%;
-    }
-	.dashboard .my-courses .course .details .wrapper-course-details {
-		width: 100%;
-        margin-top: 20px;
-    }
-	.dashboard .my-courses .course .details .wrapper-course-image .cover {
-        max-height: none;
-    }
-	.dashboard .my-courses .course .info {
-		float: left;
-		padding: 5px 0 0 0;
-		width: 100%;
-	}
-}
-
-
-.dashboard .my-courses .course .info > hgroup .date-block {
-  position: relative;
-  float: right;
 }
 
 .dashboard .my-courses .course .details .course-actions .wrapper-action-more .actions-dropdown {
@@ -677,16 +617,6 @@ nav ol.course-nav-menu {
     font-size: 10px;
   }
 
-  /*
-  header.global ol.user > li.primary > a.user-link {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    color: white;
-    width: 0;
-  }
-  */
-
   header.global ol.user > li.primary > a.user-link div {
     display: none;
   }
@@ -708,11 +638,6 @@ nav ol.course-nav-menu {
   .dashboard .my-courses .course .details .wrapper-course-image .fade-cover {
     max-height: none !important;
   }
-  .dashboard .my-courses .course .info {
-    float: left;
-    padding: 5px 0 0 0;
-    width: 100%;
-  }
   .dashboard .my-courses .course .course-info,
   .dashboard .my-courses .course .wrapper-course-actions{
     width: 100% !important;
@@ -727,13 +652,6 @@ nav ol.course-nav-menu {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .dashboard .my-courses .course .info {
-    padding: 10px 0 0;
-    width: 100%;
-  }
-}
-
 /* ### course list */
 .find-courses header.search .inner-wrapper, .university-profile header.search .inner-wrapper {
   min-width: 0;
@@ -741,7 +659,7 @@ nav ol.course-nav-menu {
 
 /* ### course about page */
 .course-info .details .inner-wrapper .faq .responses{
-	float: inherit;
+  float: inherit;
 }
 
 .course-info header.course-profile {
@@ -865,12 +783,10 @@ button,
 .light-button,
 a.light-button{
   background-color: #666;
-  /* background-image: none; */
   border-radius: 3px;
   border-style: none;
   box-shadow: 0px 0px 0px black;
   color: #fff;
-/*   padding: 14px 28px 15px 28px; */
   text-shadow: none;
   text-transform: none;
 }
@@ -897,9 +813,9 @@ header.global .nav-courseware li .cta-register{
 
 
 @media screen and (max-width: 800px) {
-	header.global .nav-courseware li .cta-login{
-		padding: 0;
-	}
+  header.global .nav-courseware li .cta-login{
+    padding: 0;
+  }
 }
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.disabled{
   background-image: none;
@@ -942,10 +858,10 @@ a.light-button:hover:not(:disabled),
 }
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register:hover:not(:disabled){
-	background-color: transparent;
-    border: solid 1px #222;
-	color: #222;
-	cursor: default;
+  background-color: transparent;
+  border: solid 1px #222;
+  color: #222;
+  cursor: default;
 }
 
 /* blue button */
@@ -984,7 +900,7 @@ a.light-button:hover:not(:disabled),
   text-transform: none;
 }
 .container .discussion-body .forum-nav .new-post-btn{
-	padding: 0;
+  padding: 0;
 }
 .container .forum-new-post-form .submit,
 .container .forum-new-post-form .cancel,
@@ -993,14 +909,14 @@ a.light-button:hover:not(:disabled),
 .xmodule_display.xmodule_PeerGradingModule section.open-ended-child div.action input.save,
 .xmodule_display.xmodule_ConditionalModule div.problem div.action .save,
 .xmodule_display.xmodule_CombinedOpenEndedModule section.open-ended-child div.action input.save {
-	padding-top: 0;
-	padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 400px) {
-	.container .discussion-module .new-post-btn{
-		width: 20px;
-		font-size: 0px;	
-	}
+  .container .discussion-module .new-post-btn{
+    width: 20px;
+    font-size: 0px;	
+  }
 }
 
 .dashboard .my-courses .message-status .actions .action .btn:hover:not(:disabled),
@@ -1039,45 +955,45 @@ form input[type="submit"],
   color: #fff;
   text-shadow: none;
   text-transform: none;
-	border-left-width: 0px;
-	border-bottom-width: 0px;
-	border-right-width: 0px;
-	border-top-width: 0px;
-	padding-top: 0px;
-	padding-bottom: 0px;
+  border-left-width: 0px;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .xmodule_display.xmodule_CapaModule div.problem div.action .check .check-label {
   color: #fff;
   font-weight: bold;
 }
 .view-register .form-actions button[type="submit"]{
-	background-color: #43ac6a;
-	background-image: none;
-	border-radius: 3px;
-	border:transparent solid 1px;
-	box-shadow: 0px 0px 0px transparent;
+  background-color: #43ac6a;
+  background-image: none;
+  border-radius: 3px;
+  border:transparent solid 1px;
+  box-shadow: 0px 0px 0px transparent;
 }
 .view-register .form-actions button[type="submit"]:hover{
-	background-color: #368a55;
+  background-color: #368a55;
 }
 .view-login .form-actions button[type="submit"],
 .view-passwordreset .form-actions button[type="submit"]{
-	background-color: #666666;
-	background-image: none;
-	border-radius: 3px;
-	border:transparent solid 1px;	
-	box-shadow: 0px 0px 0px transparent;
+  background-color: #666666;
+  background-image: none;
+  border-radius: 3px;
+  border:transparent solid 1px;	
+  box-shadow: 0px 0px 0px transparent;
 }
 .view-login .form-actions button[type="submit"]:hover,
 .view-passwordreset .form-actions button[type="submit"]:hover{
-	background-color: #525252;
+  background-color: #525252;
 }
 
 @media screen and (max-width: 800px) {
-	header.global .nav-courseware li .cta-register{
-		padding: 0;
-		width: 75px;
-	}
+  header.global .nav-courseware li .cta-register{
+    padding: 0;
+    width: 75px;
+  }
 }
 
 #change_name_form .submit input[type="submit"],
@@ -1085,7 +1001,7 @@ form input[type="submit"],
 #email_settings_form .submit input[type="submit"],
 #feedback_form .submit input[type="submit"],
 #unenroll_form .submit input[type="submit"]{
-	padding: 14px 28px 15px 28px;
+  padding: 14px 28px 15px 28px;
 }
 
 header.global .nav-courseware li .cta-register:hover:not(:disabled),
@@ -1105,8 +1021,8 @@ form input[type="submit"]:hover:not(:disabled),
 
 /* course_about header table */
 .course-info header.course-profile .intro-inner-wrapper>div.table{
-	max-width: 960px;
-	box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+  max-width: 960px;
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
 }
 /* course_about register button */
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses,
@@ -1134,7 +1050,7 @@ form input[type="submit"]:hover:not(:disabled),
 }
 
 .course-info .container nav{
-	font-size: 20px;
+  font-size: 20px;
 }
 
 /* font */
@@ -1223,7 +1139,7 @@ html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
 .resign .status .view-resign .message-title,
 .view-resign #forgot-password-modal #password-reset .status .message-title,
 .forgot-password-modal #password-reset .status .view-resign .message-title {
-	text-transform: none;
+  text-transform: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -1245,6 +1161,11 @@ html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
 }
 
 /* OAuth2 */
+#content section.authorize {
+  max-width: 1180px;
+  width: 80%;
+}
+
 .view-authorize ul.authorize-scope {
   margin: 20px 0 0 0;
   padding: 0;
@@ -1300,31 +1221,6 @@ html, body, h1, h2, h3, h4, h5, h6, div, p, a, label {
 
 .view-authorize button.action-cancel:hover {
   background-color: #222 !important;
-}
-
-/* ### login/register page */
-#login-and-registration-container {
-  margin-bottom: 40px;
-}
-
-.login-register .form-field.select-year_of_birth {
-  margin-left: 14px;
-}
-
-.login-register .form-type,
-.login-register .toggle-form {
-  min-width: 0;
-}
-
-.login-register .form-field label[for="register-honor_code"] {
-  width: 85%;
-}
-
-.login-register .form-field label[for="register-terms_of_service"] {
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  width: 85%;
-  vertical-align: top;
 }
 
 /* ### account settings page */
