@@ -2,21 +2,21 @@
 
 /* ### course header or body */
 header.global.slim h1.logo:before {
-	content: "";
-	display: block;
-	height: 35px;
-	position: absolute;
-	right: 3px;
-	top: 8px;
-	width: 1px;
+  content: "";
+  display: block;
+  height: 35px;
+  position: absolute;
+  right: 3px;
+  top: 8px;
+  width: 1px;
 }
 header.global.slim h2 {
   width: auto;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 59%;
-	margin-top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 59%;
+  margin-top: 15px;
 }
 
 body {
@@ -38,29 +38,33 @@ body {
 #wrapper-preview {
   position: relative;
   float: right;
-  margin-top: -22px;
+  margin-top: -34px;
   font-size: 12px;
   z-index: 200;
 }
 
 @media screen and (max-width: 800px) {
+  body.view-incourse .wrapper-course-material .course-material,
+  body.view-incourse .wrapper-preview-menu .preview-menu {
+    padding: 0;
+  }
   #wrapper-preview {
     margin-top: -40px;
-    padding-right: 100px;
+    padding-right: 120px;
   }
 }
 
 /* ### course info page */
-div.info-wrapper section.handouts ul{
-	background-color: transparent;
-	padding: 3px 16px 3px 16px;
+div.info-wrapper section.handouts ol {
+  background-color: transparent;
+  padding: 3px 16px 3px 16px;
 }
-div.info-wrapper section.handouts ul li a:hover{
-	text-decoration: underline;
-	color: #1d9dd9;
+div.info-wrapper section.handouts ol li a:hover{
+  text-decoration: underline !important;
+  color: #1d9dd9;
 }
-.course-info .details .inner-wrapper .prerequisites ul li, .course-info .details .inner-wrapper .syllabus ul li{
-	font: normal;
+.course-info .details .inner-wrapper .prerequisites ol li, .course-info .details .inner-wrapper .syllabus ul li{
+  font: normal;
 }
 
 @media screen and (max-width: 800px) {
@@ -85,7 +89,7 @@ div.info-wrapper section.handouts ul li a:hover{
   display: none;
 }
 nav.wrapper-course-material .course-material{
-	background-color: #ccc;
+  background-color: #ccc;
 }
 div.course-wrapper > a[href="#course-accordion-modal"] {
   display: none;
@@ -121,7 +125,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc {
 .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:focus,
 .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:hover,
 .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next a:active{
-	opacity: inherit;
+  opacity: inherit;
 }
 
 #modal-accordion {
@@ -378,7 +382,7 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc {
     padding-bottom: 30px;
   }
   .div.info-wrapper section.handouts{
-	  padding-bottom: 20px;
+  padding-bottom: 20px;
   }
 }
 
@@ -389,8 +393,8 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc {
   white-space: nowrap;
 }
 .forum-nav-thread-title.title {
-	font-weight: bold;
-	font-size: 16px;
+  font-weight: bold;
+  font-size: 16px;
 }
 .forum-nav-thread-title.body {
   color: #666;
@@ -414,31 +418,31 @@ body.discussion .forum-guideline {
   display: block;
 }
 .forum-thread-list-btn{
-	background-color: #666;
-	background-image: none;
-	border: transparent solid 1px;
-	border-style: none;
-	box-shadow: 0px 0px 0px black;
-	color: #fff;
-	padding: 14px 28px 15px 28px;
-	text-shadow: none;
-	text-transform: none;
-	border-radius: 3px;
+  background-color: #666;
+  background-image: none;
+  border: transparent solid 1px;
+  border-style: none;
+  box-shadow: 0px 0px 0px black;
+  color: #fff;
+  padding: 14px 28px 15px 28px;
+  text-shadow: none;
+  text-transform: none;
+  border-radius: 3px;
 }
 .forum-thread-list-btn:hover{
-	background-color: #999;
-	background-image: none;
-	color: #fff;
+  background-color: #999;
+  background-image: none;
+  color: #fff;
 }
 .forum-new-post-form{
-	min-width: 0px;
+  min-width: 0px;
 }
 .forum-new-post-form .post-topic a.topic-title{
-	line-height: normal;
+  line-height: normal;
 }
 .discussion.container .actions-dropdown .actions-dropdown-list{
-	margin-left: 50px;
-	width: 80px;
+  margin-left: 50px;
+  width: 80px;
 }
 
 /* new-post-btn */
@@ -725,7 +729,8 @@ body.discussion .forum-nav-header > .forum-nav-toggle li:hover {
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-0 {
   display: none;
 }
-.forum-new-post-form .post-field.hidden-post-field  {
+.forum-new-post-form .post-field.hidden-post-field,
+.forum-edit-post-form-wrapper .post-field.hidden-post-field {
   display: none;
 }
 .forum-nav-thread-list .forum-nav-thread-link .forum-nav-thread-wrapper-1 {
@@ -991,9 +996,35 @@ nav.wrapper-course-material ol.course-tabs li .tab-icon {
 }
 
 /* courseware next/prev buttons (./lms/templates/seq_module.html)*/
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:hover:not(:disabled),
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:active:not(:disabled),
+.xmodule_display.xmodule_SequenceModule nav.sequence-bottom button:focus:not(:disabled) {
+  background-color: #e4e4e4;
+  transition: none;
+  box-shadow: none;
+}
 @media screen and (max-width: 800px) {
   div.course-wrapper section.course-content {
     position: relative;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom {
+    width: auto;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button {
+    margin-top: 10px;
+    width: 52px;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button.button-next {
+    margin-right: -10px;
+    padding-top: 4px;
+    padding-left: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .xmodule_display.xmodule_SequenceModule nav.sequence-bottom button.button-previous {
+    margin-left: -10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
   .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.prev,
   .xmodule_display.xmodule_SequenceModule nav.sequence-bottom ul li.next {
@@ -1066,6 +1097,10 @@ nav.wrapper-course-material ol.course-tabs li .tab-icon {
   background: #fff;
 }
 
+.content-wrapper .container-footer {
+  min-width: 0;
+}
+
 nav.wrapper-course-material {
   display: block;
   background-color: #ccc;
@@ -1091,16 +1126,15 @@ nav.wrapper-course-material ol.course-tabs {
   padding: 15px 0 10px;
 }
 nav.wrapper-course-material ol.course-tabs li a {
-    color: #222;
-	border-radius: 0;
-	color: #222;
+  color: #222;
+  border-radius: 0;
 }
 nav.wrapper-course-material ol.course-tabs li a.active {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5));
 /* 	background-color: #43AC6A; */
-	transition: background-color 300ms ease-out;
-	color: #fff;
-	transition-delay: 300ms;
+  transition: background-color 300ms ease-out;
+  color: #fff;
+  transition-delay: 300ms;
 }
 nav.wrapper-course-material ol.course-tabs li a.active:hover {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
@@ -1128,7 +1162,7 @@ nav.wrapper-course-material ol.course-tabs li a.active:hover {
 
 /* ### course section/sub-section list */
 .course-index div#accordion h3.ui-accordion-header a{
-	line-height: normal;
+  line-height: normal;
 }
 
 /* ### course xmodule */
@@ -1137,9 +1171,9 @@ nav.wrapper-course-material ol.course-tabs li a.active:hover {
   min-height: 0;
 }
 .xmodule_display.xmodule_VideoModule div.video article.video-wrapper section.video-controls ul.vcr{
-	width: 100%;
-	border-bottom: 1px solid rgb(0,0,0);
-	box-shadow: 0px 1px 0px #555;
+  width: 100%;
+  border-bottom: 1px solid rgb(0,0,0);
+  box-shadow: 0px 1px 0px #555;
 }
 
 
@@ -1224,5 +1258,5 @@ nav.wrapper-course-material ol.course-tabs li a.active:hover {
 
 /* global */
 p{
-	word-wrap:break-word !important;
+  word-wrap:break-word !important;
 }
