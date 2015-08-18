@@ -433,6 +433,10 @@ header.global ol li.primary>a:hover{
   vertical-align: top;
 }
 
+.login-register span.minority {
+  font-size: 10px;
+}
+
 
 /* ### activate page */
 .container.activation .message {
