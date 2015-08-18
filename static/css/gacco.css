@@ -56,6 +56,13 @@ header.global nav {
 header.global .nav-courseware li .cta > i[class^="fa fa-"] {
   margin-right: 8px;
 }
+header.global .user a.user-link {
+  height: 32px;
+}
+header.global .user > .primary:last-child > a {
+  padding: 5px 8px 11px 8px;
+  height: 32px;
+}
 
 .view-register header.global nav, .view-login header.global nav, .view-authorize header.global nav {
   width: auto;
