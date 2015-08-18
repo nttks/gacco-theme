@@ -128,6 +128,11 @@ div.course-wrapper > a[href="#course-accordion-modal"] .toc {
   opacity: inherit;
 }
 
+.xmodule_display.xmodule_SequenceModule .sequence-nav-button,
+.xmodule_display.xmodule_SequenceModule .sequence-nav .sequence-list-wrapper {
+  z-index: auto;
+}
+
 #modal-accordion {
   width: auto;
   font-size: 14px;
