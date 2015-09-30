@@ -153,6 +153,10 @@ header.global ol li.primary>a:hover{
   padding-right: 5px;
 }
 
+.wrapper-footer footer .colophon .nav-colophon li > a {
+  font-size: 0.95em;
+}
+
 .wrapper-footer footer #social-plugins {
   display: block;
   float: left;
