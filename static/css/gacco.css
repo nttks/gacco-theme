@@ -448,6 +448,30 @@ header.global ol li.primary>a:hover{
   font-size: 10px;
 }
 
+@media screen and (max-width: 480px) {
+  .login-register .form-field.checkbox-honor_code {
+    margin: 20px 0;
+  }
+
+  .login-register .form-field input.checkbox {
+    font-size: 1.4em;
+    height: 1.5em;
+    vertical-align: top;
+  }
+
+  .login-register .form-field label[for="register-honor_code"] {
+    font-size: 0.7em;
+    margin-right: 0;
+    vertical-align: middle;
+  }
+
+  .login-register .form-field label[for="register-terms_of_service"] {
+    font-size: 0.7em;
+    margin-right: 0;
+    vertical-align: middle;
+  }
+}
+
 
 /* ### activate page */
 .container.activation .message {
