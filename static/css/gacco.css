@@ -643,7 +643,13 @@ nav ol.course-nav-menu {
   text-transform: none;
 }
 
-.enter-course-blocked.archived {
+p.course-block {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.enter-course-blocked {
   float: right;
   margin-top: 0;
 }
@@ -811,6 +817,7 @@ nav ol.course-nav-menu {
 
 /* gray button */
 .dashboard .my-courses .course .wrapper-course-actions .enter-course.archived,
+.dashboard .my-courses .course .wrapper-course-actions .enter-course-blocked,
 .forum-new-post-form .cancel,
 .xmodule_display.xmodule_LTIModulediv.lti .wrapper-lti-link .lti-link .link_lti_new_window  {
   background-color: #666;
