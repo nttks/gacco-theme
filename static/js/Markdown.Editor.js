@@ -27,12 +27,8 @@
 
     // The text that appears on the upper part of the dialog box when
     // entering links.
-    var linkDialogText = "<p><b>" + gettext("Insert Hyperlink") + "</b></p><p>http://example.com/ " +
-	// Translators: Please keep the quotation marks (") around this text
-	gettext("\"optional title\"") + "</p>";
-    var imageDialogText = "<p><b>" + gettext("Insert Image (upload file or type url)") + "</b></p><p>http://example.com/images/diagram.jpg " +
-	// Translators: Please keep the quotation marks (") around this text
-	gettext("\"optional title\"") + "<br><br></p>";
+    var linkDialogText = "<p><b>" + gettext("Insert Hyperlink") + "</b></p><p></p>";
+    var imageDialogText = "<p><b>" + gettext("Insert Image (upload file or type url)") + "</b></p><p></p>";
 
     // The default text that appears in the dialog input box when entering
     // links.
@@ -92,7 +88,7 @@
                 }
             }
 
-            uiManager = new UIManager(idPostfix, panels, undoManager, previewManager, commandManager, help, imageUploadHandler);
+            uiManager = new UIManager(idPostfix, panels, undoManager, previewManager, commandManager, help, null);
             uiManager.setUndoRedoButtonStates();
 
             var forceRefresh = that.refreshPreview = function () { previewManager.refresh(true); };
