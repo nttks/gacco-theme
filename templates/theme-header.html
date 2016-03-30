@@ -84,6 +84,9 @@ site_status_msg = get_site_status_msg(course_id)
                 <a href="${reverse('dashboard')}">${_("Dashboard")}</a>
               </li>
             % endif
+            % if request.biz_accessible:
+            <li><a href="${reverse('biz:index')}">${_("Biz")}</a></li>
+            % endif
             <li><a href="${reverse('account_settings')}">${_("Account Settings")}</a></li>
             % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
               <li><a href="${marketing_link('FAQ')}">${_("FAQ")}</a></li>
