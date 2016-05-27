@@ -71,20 +71,23 @@ from student.helpers import (
           <div class="sts-enrollment-value">${course_verified_certs.get('enrollment_value')}</div>
         </span>
       % endif
-      % if advanced_course_status.has_available_f2f_course() and not advanced_course_status.is_purchased():
-        <div class="advanced-course-information clearfix ${'is-hidden' if advanced_course_status.show_upsell_message() else ''}">
-          <div class="advanced-course-information-label">${_("Information of face-to-face course")}</div>
-          <a href="${reverse('advanced_course:courses_face_to_face', args=[course.id])}" class="advanced-course-information-action">${_("View Details")}</a>
-          ## <div class="triangle"></div>
-        </div>
-      % elif advanced_course_status.is_purchased():
-        <div class="advanced-course-information">
-          <div class="advanced-course-information-label purchased">${_("Face 2 Face Classroom")}${_("Purchased")}</div>
-          ## TODO how should we show if the order is more than.
+      % if advanced_course_status.is_purchased():
+        <div class="advanced-course-information purchased">
+          <div class="label">${_("Face 2 Face Classroom")}${_("Purchased")}</div>
           % for order in advanced_course_status.get_purchased_orders():
-          <a href="${reverse('shoppingcart.views.show_receipt', args=[order.id])}" class="advanced-course-information-action">${_("View Details and Receipt")}</a>
+          <a href="${reverse('shoppingcart.views.show_receipt', args=[order.id])}" class="btn">${_("View Subscription Details")}</a>
           % endfor
-          ## <div class="triangle purchased"></div>
+        </div>
+      % elif course.is_f2f_course and course.is_f2f_course_sell:
+      ##% elif advanced_course_status.has_available_f2f_course():
+        <div class="advanced-course-information apply">
+          <a href="${reverse('advanced_course:courses_face_to_face', args=[course.id])}" class="btn">
+            % if advanced_course_status.has_available_f2f_course():
+            ${_("Face 2 Face Classroom")}&nbsp;${_("Subscription")}
+            % else:
+            ${_("There is face-to-face course")}
+            % endif
+          </a>
         </div>
       % endif
     </div>
@@ -290,15 +293,9 @@ from student.helpers import (
   <footer class="wrapper-messages-primary">
     <ul class="messages-list">
 
-      % if advanced_course_status.has_available_f2f_course() and advanced_course_status.show_upsell_message():
-      <div class="advanced-course-message">
-        <p class="advanced-course-message-title">${_("This course has face-to-face (fee-charging) course.")}</p>
-        <div class="advanced-course-message-body">
-          <p>${_("Realistic lectures by teachers, is a learning course of gacco recommended that you can get a special certificate of completion.")}</p>
-          <a href="${reverse('advanced_course:courses_face_to_face', args=[course.id])}" class="btn">${_("View Details")}</a>
-        </div>
-        <div class="triangle"></div>
-        <i class="fa fa-remove advanced-course-message-close" data-course-id="${unicode(course.id)}"></i>
+      % if advanced_course_status.has_available_f2f_course() and not advanced_course_status.is_purchased():
+      <div class="message message-status is-shown">
+        <p class="message-copy">${_("This course, we recommend face-to-face course. Please consider all means.")} ${_("What is face-to-face course?")} => <a href="${marketing_link('FACE_TO_FACE')}" target="_blank">${_("here")}</a></p>
       </div>
       % endif
 

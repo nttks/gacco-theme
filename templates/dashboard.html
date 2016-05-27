@@ -25,11 +25,6 @@ from django.core.urlresolvers import reverse
   <%static:include path="dashboard/${template_name}.underscore" />
 </script>
 % endfor
-<style>
-.dashboard .my-courses .advanced-course-information .triangle.purchased:before {
-  border-top-color: #fff;
-}
-</style>
 
 % for template_name in ["dashboard_search_item", "dashboard_search_results", "search_loading", "search_error"]:
 <script type="text/template" id="${template_name}-tpl">
@@ -46,22 +41,6 @@ from django.core.urlresolvers import reverse
         dashboard: "${reverse('dashboard')}",
         signInUser: "${reverse('signin_user')}",
         changeEmailSettings: "${reverse('change_email_settings')}"
-      });
-    });
-    $('.advanced-course-message-close').click(function(){
-      var $this = $(this);
-      $.ajax({
-        url: '${reverse('advanced_course:close_upsell')}',
-        type: 'POST',
-        headers: {
-          'X-CSRFToken': $.cookie('csrftoken')
-        },
-        data: {
-          'course_id': $this.data('course-id')
-        }
-      });
-      $this.parent().hide(300, function() {
-        $this.parents('.course-item').find('.advanced-course-information').show();
       });
     });
   </script>

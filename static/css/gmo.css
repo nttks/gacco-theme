@@ -100,8 +100,127 @@ h3 {
 /*==================================
  * page styles
  *=================================*/
+/* Breadcrumb */
+#breadcrumb {
+  margin-top: 10px;
+  list-style: none;
+  display: inline-block;
+  width: 100%;
+}
+
+#breadcrumb li {
+  float: left;
+  width: 25%;
+}
+
+#breadcrumb li span.text {
+  padding-left: 5px;
+  color: #3c3c3c;
+  font-size: 14px;
+}
+
+#breadcrumb li > span {
+  color: #fff;
+  display: block;
+  background: #e5e5e5;
+  position: relative;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 23px;
+}
+
+#breadcrumb li > span i {
+  color: #3c3c3c;
+}
+
+#breadcrumb li:nth-child(even) > span {
+  background-color: #e5e5e5;
+}
+
+#breadcrumb li:nth-child(even) > span:before {
+  border-color: #e5e5e5;
+  border-left-color: transparent;
+}
+
+#breadcrumb li:nth-child(even) > span:after {
+  border-left-color: #e5e5e5;
+}
+
+#breadcrumb li:first-child > span {
+  padding-left: 15px;
+  border-radius: 4px 0 0 4px;
+}
+
+#breadcrumb li:first-child > span:before {
+  border: none;
+}
+
+#breadcrumb li:last-child > span {
+  padding-right: 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+#breadcrumb li:last-child > span:after {
+  border: none;
+}
+
+#breadcrumb li > span:before,
+#breadcrumb li > span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 0 solid #e5e5e5;
+  border-width: 20px 10px;
+  width: 0;
+  height: 0;
+}
+
+#breadcrumb li > span:before {
+  left: -20px;
+  border-left-color: transparent;
+}
+
+#breadcrumb li > span:after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: #e5e5e5;
+}
+
+#breadcrumb li.active > span {
+  background: #6d6d6d;
+}
+
+#breadcrumb li.active > span i,
+#breadcrumb li.active > span .text {
+    color: #fff;
+}
+
+#breadcrumb li.active:nth-child(even) > span {
+  background-color: #6d6d6d;
+}
+
+#breadcrumb li.active:nth-child(even) > span:before {
+  border-color: #6d6d6d;
+  border-left-color: transparent;
+}
+
+#breadcrumb li.active:nth-child(even) > span:after {
+  border-left-color: #6d6d6d;
+}
+
+#breadcrumb li:not(:first-child).active > span:before {
+  border: 0 solid #6d6d6d;
+  border-width: 20px 10px;
+  border-left-color: transparent;
+}
+
+#breadcrumb li.active > span:after {
+  border-left-color: #6d6d6d;
+}
+
 .information {
-  box-shadow: 5px 5px 0 #bbb;
   border: solid 1px #ccc;
   background: #f9f9f9;
   padding: 25px;
@@ -151,6 +270,7 @@ h3 {
 
 .section {
   padding: 0 0 0 20px;
+  position: relative;
 }
 
 #header {
@@ -244,6 +364,24 @@ h3 {
   margin: 30px 0 0 0;
 }
 
+#card-information {
+  position: absolute;
+  top: 0;
+  left: 500px;
+}
+
+#card-information ul li {
+  display: inline-block;
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+#card-information img.visa { width: 40px; }
+#card-information img.master { width: 50px; }
+#card-information img.diners { width: 35px; }
+#card-information img.amex { width: 30px; }
+#card-information img.jcb { width: 30px; }
+
 #card-form {
   padding: 20px 0;
 }
@@ -327,6 +465,11 @@ h3 {
     text-align: left;
   }
 
+  #card-information {
+    position: static;
+    margin-top: 20px;
+  }
+
   .total {
     text-align: left;
   }
@@ -385,9 +528,7 @@ h3 {
 
 /* card description */
 #card-form .card-description {
-  background-color: #ffe;
   padding: 2.5rem 0.8rem 1.5rem;
-  border: 2px solid #999;
   position: relative;
 }
 
@@ -418,10 +559,9 @@ h3 {
 #card-form .card-description span.close {
   position: absolute;
   cursor: pointer;
-  right: 5px;
+  left: 5px;
   top: 5px;
-  background-color: #0078b0;
-  color: #fff;
+  background-color: #e7e7e7;
   padding: 0.2rem 1rem;
 }
 
@@ -433,5 +573,9 @@ h3 {
 
   #card-form .input.card-number {
     width: 90%;
+  }
+
+  #breadcrumb span.text {
+    display: none;
   }
 }

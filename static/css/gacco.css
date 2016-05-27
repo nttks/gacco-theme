@@ -722,94 +722,6 @@ p.course-block {
   margin-top: 0;
 }
 
-
-.dashboard .my-courses .advanced-course-message {
-  position: relative;
-  margin-top: 10px;
-  padding: 10px 20px;
-  min-height: 100px;
-  padding-left: 140px;
-  background-color: #fffde7;
-  border: 1px solid #ccc;
-  box-shadow: 7px 7px 0px #bbb;
-  border-radius: 6px;
-}
-
-.dashboard .my-courses .advanced-course-message .advanced-course-message-title {
-  width: 90%;
-  font-weight: bold;
-}
-
-.dashboard .my-courses .advanced-course-message .advanced-course-message-body {
-  width: 100%;
-  margin-top: 10px;
-}
-
-.dashboard .my-courses .advanced-course-message .advanced-course-message-body p {
-  float: left;
-  width: 70%;
-}
-
-.dashboard .my-courses .advanced-course-message a.btn {
-  display: inline-block;
-  background-color: #ffa300;
-  padding: 15px 10px;
-  margin-top: 10px;
-  text-align: center;
-  letter-spacing: 1.8px;
-  border-radius: 6px;
-  border-color: #c4721a;
-  color: #fff;
-  outline: rgb(255, 255, 255) none 0px;
-  text-decoration: none;
-  float: right;
-}
-
-.dashboard .my-courses .advanced-course-message a.btn:hover {
-  opacity: 0.8;
-}
-
-.dashboard .my-courses .advanced-course-message .triangle {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  height: 0;
-  width: 0;
-  font-size: 11px;
-  border-top:#999 60px solid;
-  border-left:60px solid transparent;
-  border-right:60px solid transparent;
-  border-bottom:60px solid transparent;
-}
-
-.advanced-course-message .triangle:before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  right: -53px;
-  top: -60px;
-  border: 60px solid transparent;
-  border-top-color: #cf0f31;
-}
-
-.dashboard .my-courses .advanced-course-message .triangle:after {
-  content: "Verified \A Certificate";
-  white-space: pre;
-  text-align: center;
-  position: absolute;
-  right: -21px;
-  top: -59px;
-  color: #fff;
-}
-
-.dashboard .my-courses .advanced-course-message-close {
-  cursor: pointer;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
 .dashboard .my-courses .advanced-course-information {
   float: left;
   position: relative;
@@ -817,26 +729,24 @@ p.course-block {
   padding-left: 3px;
 }
 
-.dashboard .my-courses .advanced-course-information-label {
+.dashboard .my-courses .advanced-course-information .label {
   margin-top: 5px;
   padding: 5px;
+  color: #444;
   background-color: #fffde7;
   font-size: 0.6rem;
   font-weight: 600;
-  box-shadow: 3px 3px 0 #bbb;
   text-align: center;
 }
 
-.dashboard .my-courses .advanced-course-information-label.purchased {
-  color: #fff;
-  background-color: #ffa300;
+.dashboard .my-courses .advanced-course-information.purchased .label {
+  background-color: #e7e7e7;
 }
 
-.dashboard .my-courses a.advanced-course-information-action {
+.dashboard .my-courses .advanced-course-information a.btn {
   display: block;
   text-decoration: none;
   margin-top: 5px;
-  background-color: #666;
   padding: 7px 0;
   font-size: 0.6rem;
   color: #fff;
@@ -845,10 +755,22 @@ p.course-block {
   border-radius: 10px;
 }
 
-.dashboard .my-courses a.advanced-course-information-action:hover {
+.dashboard .my-courses .advanced-course-information a.btn:hover {
   color: #fff;
   text-decoration: none;
   opacity: 0.8;
+}
+
+.dashboard .my-courses .advanced-course-information.purchased a.btn {
+  background-color: #666;
+}
+
+.dashboard .my-courses .advanced-course-information.apply a.btn {
+  background-color: #ff5233;
+}
+
+.dashboard .my-courses .advanced-course-information.apply a.btn:hover {
+  background-color: #f52d2f;
 }
 
 @media screen and (max-width: 800px) {
@@ -884,32 +806,6 @@ p.course-block {
     margin-top: 0;
   }
 
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body:before,
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body:after {
-    content: " ";
-    display: table;
-  }
-
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body:after {
-    clear: both;
-  }
-
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body {
-    *zoom: 1;
-  }
-
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body p,
-  .dashboard .my-courses .advanced-course-message .advanced-course-message-body a {
-    width: 95%;
-  }
-
-  .dashboard .my-courses .advanced-course-information .triangle {
-    display: none;
-  }
-
-  .dashboard .my-courses a.advanced-course-information-action {
-    padding: 10px 0;
-  }
 }
 
 @media screen and (max-width: 620px) {
@@ -937,13 +833,6 @@ p.course-block {
     float: left;
   }
 
-  .dashboard .my-courses .advanced-course-message {
-    padding: 10px;
-  }
-
-  .dashboard .my-courses .triangle {
-    display: none;
-  }
 }
 
 /* ### course list */
