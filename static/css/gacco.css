@@ -722,6 +722,57 @@ p.course-block {
   margin-top: 0;
 }
 
+.dashboard .my-courses .advanced-course-information {
+  float: left;
+  position: relative;
+  width: 95%;
+  padding-left: 3px;
+}
+
+.dashboard .my-courses .advanced-course-information .label {
+  margin-top: 5px;
+  padding: 5px;
+  color: #444;
+  background-color: #fffde7;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dashboard .my-courses .advanced-course-information.purchased .label {
+  background-color: #e7e7e7;
+}
+
+.dashboard .my-courses .advanced-course-information a.btn {
+  display: block;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 7px 0;
+  font-size: 0.6rem;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dashboard .my-courses .advanced-course-information a.btn:hover {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.dashboard .my-courses .advanced-course-information.purchased a.btn {
+  background-color: #666;
+}
+
+.dashboard .my-courses .advanced-course-information.apply a.btn {
+  background-color: #ff5233;
+}
+
+.dashboard .my-courses .advanced-course-information.apply a.btn:hover {
+  background-color: #f52d2f;
+}
+
 @media screen and (max-width: 800px) {
   .find-course-placeholder {
     display: none !important;
@@ -754,6 +805,7 @@ p.course-block {
   .find-course-button > a {
     margin-top: 0;
   }
+
 }
 
 @media screen and (max-width: 620px) {
@@ -780,6 +832,7 @@ p.course-block {
   .dashboard .my-courses .course .details .enter-course-blocked {
     float: left;
   }
+
 }
 
 /* ### course list */
